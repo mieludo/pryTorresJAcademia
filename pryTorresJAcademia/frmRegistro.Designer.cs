@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.lblCodigo = new System.Windows.Forms.Label();
-            this.tbCodigo = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.tbNombre = new System.Windows.Forms.TextBox();
             this.lblPlan = new System.Windows.Forms.Label();
@@ -39,30 +38,24 @@
             this.btnListado = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnRegistrar = new System.Windows.Forms.Button();
+            this.mtbCodigo = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // lblCodigo
             // 
             this.lblCodigo.AutoSize = true;
             this.lblCodigo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigo.Location = new System.Drawing.Point(69, 78);
+            this.lblCodigo.Location = new System.Drawing.Point(25, 32);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(65, 21);
             this.lblCodigo.TabIndex = 0;
             this.lblCodigo.Text = "Código";
             // 
-            // tbCodigo
-            // 
-            this.tbCodigo.Location = new System.Drawing.Point(182, 79);
-            this.tbCodigo.Name = "tbCodigo";
-            this.tbCodigo.Size = new System.Drawing.Size(100, 20);
-            this.tbCodigo.TabIndex = 1;
-            // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(69, 137);
+            this.lblNombre.Location = new System.Drawing.Point(25, 91);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(73, 21);
             this.lblNombre.TabIndex = 2;
@@ -70,7 +63,7 @@
             // 
             // tbNombre
             // 
-            this.tbNombre.Location = new System.Drawing.Point(182, 137);
+            this.tbNombre.Location = new System.Drawing.Point(138, 91);
             this.tbNombre.Name = "tbNombre";
             this.tbNombre.Size = new System.Drawing.Size(100, 20);
             this.tbNombre.TabIndex = 3;
@@ -79,7 +72,7 @@
             // 
             this.lblPlan.AutoSize = true;
             this.lblPlan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlan.Location = new System.Drawing.Point(69, 198);
+            this.lblPlan.Location = new System.Drawing.Point(25, 152);
             this.lblPlan.Name = "lblPlan";
             this.lblPlan.Size = new System.Drawing.Size(44, 21);
             this.lblPlan.TabIndex = 4;
@@ -88,7 +81,11 @@
             // cbxPlan
             // 
             this.cbxPlan.FormattingEnabled = true;
-            this.cbxPlan.Location = new System.Drawing.Point(182, 198);
+            this.cbxPlan.Items.AddRange(new object[] {
+            "Plan Mayor",
+            "Plan Medio",
+            "Plan Chico"});
+            this.cbxPlan.Location = new System.Drawing.Point(138, 152);
             this.cbxPlan.Name = "cbxPlan";
             this.cbxPlan.Size = new System.Drawing.Size(100, 21);
             this.cbxPlan.TabIndex = 5;
@@ -97,7 +94,7 @@
             // 
             this.lblActivo.AutoSize = true;
             this.lblActivo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblActivo.Location = new System.Drawing.Point(69, 273);
+            this.lblActivo.Location = new System.Drawing.Point(25, 227);
             this.lblActivo.Name = "lblActivo";
             this.lblActivo.Size = new System.Drawing.Size(59, 21);
             this.lblActivo.TabIndex = 6;
@@ -106,7 +103,7 @@
             // chbActivo
             // 
             this.chbActivo.AutoSize = true;
-            this.chbActivo.Location = new System.Drawing.Point(182, 280);
+            this.chbActivo.Location = new System.Drawing.Point(138, 234);
             this.chbActivo.Name = "chbActivo";
             this.chbActivo.Size = new System.Drawing.Size(15, 14);
             this.chbActivo.TabIndex = 7;
@@ -114,16 +111,17 @@
             // 
             // btnListado
             // 
-            this.btnListado.Location = new System.Drawing.Point(73, 357);
+            this.btnListado.Location = new System.Drawing.Point(21, 311);
             this.btnListado.Name = "btnListado";
             this.btnListado.Size = new System.Drawing.Size(69, 23);
             this.btnListado.TabIndex = 8;
             this.btnListado.Text = "Listado";
             this.btnListado.UseVisualStyleBackColor = true;
+            this.btnListado.Click += new System.EventHandler(this.btnListado_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(144, 401);
+            this.btnCancelar.Location = new System.Drawing.Point(96, 311);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(69, 23);
             this.btnCancelar.TabIndex = 9;
@@ -132,12 +130,20 @@
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(213, 357);
+            this.btnRegistrar.Location = new System.Drawing.Point(169, 311);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(69, 23);
             this.btnRegistrar.TabIndex = 10;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = true;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
+            // 
+            // mtbCodigo
+            // 
+            this.mtbCodigo.Location = new System.Drawing.Point(138, 32);
+            this.mtbCodigo.Name = "mtbCodigo";
+            this.mtbCodigo.Size = new System.Drawing.Size(52, 20);
+            this.mtbCodigo.TabIndex = 11;
             // 
             // frmRegistro
             // 
@@ -145,6 +151,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(382, 477);
+            this.Controls.Add(this.mtbCodigo);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnListado);
@@ -154,7 +161,6 @@
             this.Controls.Add(this.lblPlan);
             this.Controls.Add(this.tbNombre);
             this.Controls.Add(this.lblNombre);
-            this.Controls.Add(this.tbCodigo);
             this.Controls.Add(this.lblCodigo);
             this.MaximizeBox = false;
             this.Name = "frmRegistro";
@@ -168,7 +174,6 @@
         #endregion
 
         private System.Windows.Forms.Label lblCodigo;
-        private System.Windows.Forms.TextBox tbCodigo;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.TextBox tbNombre;
         private System.Windows.Forms.Label lblPlan;
@@ -178,5 +183,6 @@
         private System.Windows.Forms.Button btnListado;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnRegistrar;
+        private System.Windows.Forms.MaskedTextBox mtbCodigo;
     }
 }
