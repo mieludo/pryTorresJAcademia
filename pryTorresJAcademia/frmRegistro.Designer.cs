@@ -67,7 +67,7 @@
             this.tbNombre.Location = new System.Drawing.Point(138, 141);
             this.tbNombre.Name = "tbNombre";
             this.tbNombre.Size = new System.Drawing.Size(100, 20);
-            this.tbNombre.TabIndex = 3;
+            this.tbNombre.TabIndex = 1;
             // 
             // lblPlan
             // 
@@ -90,7 +90,7 @@
             this.cbxPlan.Location = new System.Drawing.Point(138, 202);
             this.cbxPlan.Name = "cbxPlan";
             this.cbxPlan.Size = new System.Drawing.Size(100, 21);
-            this.cbxPlan.TabIndex = 5;
+            this.cbxPlan.TabIndex = 2;
             // 
             // lblActivo
             // 
@@ -108,7 +108,7 @@
             this.chbActivo.Location = new System.Drawing.Point(138, 284);
             this.chbActivo.Name = "chbActivo";
             this.chbActivo.Size = new System.Drawing.Size(15, 14);
-            this.chbActivo.TabIndex = 7;
+            this.chbActivo.TabIndex = 3;
             this.chbActivo.UseVisualStyleBackColor = true;
             // 
             // btnListado
@@ -116,7 +116,7 @@
             this.btnListado.Location = new System.Drawing.Point(26, 361);
             this.btnListado.Name = "btnListado";
             this.btnListado.Size = new System.Drawing.Size(69, 23);
-            this.btnListado.TabIndex = 8;
+            this.btnListado.TabIndex = 6;
             this.btnListado.Text = "Listado";
             this.btnListado.UseVisualStyleBackColor = true;
             this.btnListado.Click += new System.EventHandler(this.btnListado_Click);
@@ -126,7 +126,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(101, 361);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(69, 23);
-            this.btnCancelar.TabIndex = 9;
+            this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
@@ -135,7 +135,7 @@
             this.btnRegistrar.Location = new System.Drawing.Point(174, 361);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(69, 23);
-            this.btnRegistrar.TabIndex = 10;
+            this.btnRegistrar.TabIndex = 4;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = true;
             this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
@@ -146,7 +146,7 @@
             this.mtbCodigo.Mask = "999";
             this.mtbCodigo.Name = "mtbCodigo";
             this.mtbCodigo.Size = new System.Drawing.Size(32, 20);
-            this.mtbCodigo.TabIndex = 11;
+            this.mtbCodigo.TabIndex = 0;
             // 
             // lblInfo
             // 

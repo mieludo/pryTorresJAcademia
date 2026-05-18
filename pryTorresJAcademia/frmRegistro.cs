@@ -25,23 +25,6 @@ namespace pryTorresJAcademia
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            string estado;
-            if (chbActivo.Checked)
-            {
-                estado = "Activo";
-            }
-            else
-            {
-                estado = "Inactivo";
-            }
-            MessageBox.Show(
-                "Registro completo\n\n" +
-                "Código: " + mtbCodigo.Text +
-                "\nNombre: " + tbNombre.Text +
-                "\nPlan: " + cbxPlan.Text +
-                "\nEstado: " + estado);
-        
-
 
 
             if (tbNombre.Text == "" || cbxPlan.Text == "" || mtbCodigo.Text == "")
@@ -53,7 +36,25 @@ namespace pryTorresJAcademia
                 MessageBox.Show("Registro con éxito", "Registro", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 this.Close();
 
-                
+                string estado;
+
+                if (chbActivo.Checked)
+                {
+                    estado = "Activo";
+                }
+                else
+                {
+                    estado = "Inactivo";
+                }
+                MessageBox.Show(
+                    "Registro completo\n\n" +
+                    "Código: " + mtbCodigo.Text +
+                    "\nNombre: " + tbNombre.Text +
+                    "\nPlan: " + cbxPlan.Text +
+                    "\nEstado: " + estado);
+        
+
+
             }
         }
         

@@ -43,9 +43,9 @@
             this.lblBienvenido.ForeColor = System.Drawing.Color.Red;
             this.lblBienvenido.Location = new System.Drawing.Point(198, 114);
             this.lblBienvenido.Name = "lblBienvenido";
-            this.lblBienvenido.Size = new System.Drawing.Size(240, 50);
+            this.lblBienvenido.Size = new System.Drawing.Size(262, 50);
             this.lblBienvenido.TabIndex = 0;
-            this.lblBienvenido.Text = "Bienvenido !";
+            this.lblBienvenido.Text = "¡ Bienvenido !";
             this.lblBienvenido.Click += new System.EventHandler(this.lblBienvenido_Click);
             // 
             // btnIniciar
