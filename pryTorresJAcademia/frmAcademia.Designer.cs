@@ -1,0 +1,95 @@
+﻿namespace pryTorresJAcademia
+{
+    partial class frmAcademia
+    {
+        /// <summary>
+        /// Variable del diseñador necesaria.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Limpiar los recursos que se estén usando.
+        /// </summary>
+        /// <param name="disposing">true si los recursos administrados se deben desechar; false en caso contrario.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Código generado por el Diseñador de Windows Forms
+
+        /// <summary>
+        /// Método necesario para admitir el Diseñador. No se puede modificar
+        /// el contenido de este método con el editor de código.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAcademia));
+            this.lblBienvenido = new System.Windows.Forms.Label();
+            this.btnIniciar = new System.Windows.Forms.Button();
+            this.pbInstituto = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbInstituto)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // lblBienvenido
+            // 
+            this.lblBienvenido.AutoSize = true;
+            this.lblBienvenido.BackColor = System.Drawing.Color.Transparent;
+            this.lblBienvenido.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBienvenido.ForeColor = System.Drawing.Color.Red;
+            this.lblBienvenido.Location = new System.Drawing.Point(198, 114);
+            this.lblBienvenido.Name = "lblBienvenido";
+            this.lblBienvenido.Size = new System.Drawing.Size(240, 50);
+            this.lblBienvenido.TabIndex = 0;
+            this.lblBienvenido.Text = "Bienvenido !";
+            this.lblBienvenido.Click += new System.EventHandler(this.lblBienvenido_Click);
+            // 
+            // btnIniciar
+            // 
+            this.btnIniciar.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIniciar.Location = new System.Drawing.Point(207, 259);
+            this.btnIniciar.Name = "btnIniciar";
+            this.btnIniciar.Size = new System.Drawing.Size(231, 55);
+            this.btnIniciar.TabIndex = 1;
+            this.btnIniciar.Text = "Iniciar";
+            this.btnIniciar.UseVisualStyleBackColor = true;
+            // 
+            // pbInstituto
+            // 
+            this.pbInstituto.Image = ((System.Drawing.Image)(resources.GetObject("pbInstituto.Image")));
+            this.pbInstituto.Location = new System.Drawing.Point(0, 0);
+            this.pbInstituto.Name = "pbInstituto";
+            this.pbInstituto.Size = new System.Drawing.Size(648, 417);
+            this.pbInstituto.TabIndex = 2;
+            this.pbInstituto.TabStop = false;
+            // 
+            // frmAcademia
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(643, 415);
+            this.Controls.Add(this.btnIniciar);
+            this.Controls.Add(this.lblBienvenido);
+            this.Controls.Add(this.pbInstituto);
+            this.MaximizeBox = false;
+            this.Name = "frmAcademia";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Inicio";
+            ((System.ComponentModel.ISupportInitialize)(this.pbInstituto)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Label lblBienvenido;
+        private System.Windows.Forms.Button btnIniciar;
+        private System.Windows.Forms.PictureBox pbInstituto;
+    }
+}
+
