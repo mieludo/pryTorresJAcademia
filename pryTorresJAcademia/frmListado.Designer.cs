@@ -29,72 +29,87 @@
         private void InitializeComponent()
         {
             this.gbxBuscar = new System.Windows.Forms.GroupBox();
-            this.chbTodo = new System.Windows.Forms.CheckBox();
-            this.chbCodigo = new System.Windows.Forms.CheckBox();
-            this.chbNombre = new System.Windows.Forms.CheckBox();
-            this.chbPlan = new System.Windows.Forms.CheckBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.rbTodo = new System.Windows.Forms.RadioButton();
+            this.rbCodigo = new System.Windows.Forms.RadioButton();
+            this.rbNombre = new System.Windows.Forms.RadioButton();
+            this.rbPlan = new System.Windows.Forms.RadioButton();
             this.gbxBuscar.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbxBuscar
             // 
-            this.gbxBuscar.Controls.Add(this.chbPlan);
-            this.gbxBuscar.Controls.Add(this.chbNombre);
-            this.gbxBuscar.Controls.Add(this.chbCodigo);
-            this.gbxBuscar.Controls.Add(this.chbTodo);
+            this.gbxBuscar.Controls.Add(this.rbPlan);
+            this.gbxBuscar.Controls.Add(this.rbNombre);
+            this.gbxBuscar.Controls.Add(this.rbCodigo);
+            this.gbxBuscar.Controls.Add(this.rbTodo);
+            this.gbxBuscar.Controls.Add(this.btnBuscar);
             this.gbxBuscar.Location = new System.Drawing.Point(21, 15);
             this.gbxBuscar.Name = "gbxBuscar";
-            this.gbxBuscar.Size = new System.Drawing.Size(333, 249);
+            this.gbxBuscar.Size = new System.Drawing.Size(141, 203);
             this.gbxBuscar.TabIndex = 0;
             this.gbxBuscar.TabStop = false;
             this.gbxBuscar.Text = "Buscar";
             // 
-            // chbTodo
+            // btnBuscar
             // 
-            this.chbTodo.AutoSize = true;
-            this.chbTodo.Location = new System.Drawing.Point(30, 35);
-            this.chbTodo.Name = "chbTodo";
-            this.chbTodo.Size = new System.Drawing.Size(51, 17);
-            this.chbTodo.TabIndex = 0;
-            this.chbTodo.Text = "Todo";
-            this.chbTodo.UseVisualStyleBackColor = true;
+            this.btnBuscar.Location = new System.Drawing.Point(24, 140);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.TabIndex = 1;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
             // 
-            // chbCodigo
+            // rbTodo
             // 
-            this.chbCodigo.AutoSize = true;
-            this.chbCodigo.Location = new System.Drawing.Point(30, 58);
-            this.chbCodigo.Name = "chbCodigo";
-            this.chbCodigo.Size = new System.Drawing.Size(59, 17);
-            this.chbCodigo.TabIndex = 1;
-            this.chbCodigo.Text = "Código";
-            this.chbCodigo.UseVisualStyleBackColor = true;
+            this.rbTodo.AutoSize = true;
+            this.rbTodo.Location = new System.Drawing.Point(24, 31);
+            this.rbTodo.Name = "rbTodo";
+            this.rbTodo.Size = new System.Drawing.Size(50, 17);
+            this.rbTodo.TabIndex = 2;
+            this.rbTodo.TabStop = true;
+            this.rbTodo.Text = "Todo";
+            this.rbTodo.UseVisualStyleBackColor = true;
             // 
-            // chbNombre
+            // rbCodigo
             // 
-            this.chbNombre.AutoSize = true;
-            this.chbNombre.Location = new System.Drawing.Point(30, 81);
-            this.chbNombre.Name = "chbNombre";
-            this.chbNombre.Size = new System.Drawing.Size(63, 17);
-            this.chbNombre.TabIndex = 2;
-            this.chbNombre.Text = "Nombre";
-            this.chbNombre.UseVisualStyleBackColor = true;
+            this.rbCodigo.AutoSize = true;
+            this.rbCodigo.Location = new System.Drawing.Point(24, 54);
+            this.rbCodigo.Name = "rbCodigo";
+            this.rbCodigo.Size = new System.Drawing.Size(58, 17);
+            this.rbCodigo.TabIndex = 3;
+            this.rbCodigo.TabStop = true;
+            this.rbCodigo.Text = "Código";
+            this.rbCodigo.UseVisualStyleBackColor = true;
             // 
-            // chbPlan
+            // rbNombre
             // 
-            this.chbPlan.AutoSize = true;
-            this.chbPlan.Location = new System.Drawing.Point(30, 104);
-            this.chbPlan.Name = "chbPlan";
-            this.chbPlan.Size = new System.Drawing.Size(47, 17);
-            this.chbPlan.TabIndex = 3;
-            this.chbPlan.Text = "Plan";
-            this.chbPlan.UseVisualStyleBackColor = true;
+            this.rbNombre.AutoSize = true;
+            this.rbNombre.Location = new System.Drawing.Point(24, 77);
+            this.rbNombre.Name = "rbNombre";
+            this.rbNombre.Size = new System.Drawing.Size(62, 17);
+            this.rbNombre.TabIndex = 4;
+            this.rbNombre.TabStop = true;
+            this.rbNombre.Text = "Nombre";
+            this.rbNombre.UseVisualStyleBackColor = true;
+            // 
+            // rbPlan
+            // 
+            this.rbPlan.AutoSize = true;
+            this.rbPlan.Location = new System.Drawing.Point(24, 100);
+            this.rbPlan.Name = "rbPlan";
+            this.rbPlan.Size = new System.Drawing.Size(46, 17);
+            this.rbPlan.TabIndex = 5;
+            this.rbPlan.TabStop = true;
+            this.rbPlan.Text = "Plan";
+            this.rbPlan.UseVisualStyleBackColor = true;
             // 
             // frmListado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ClientSize = new System.Drawing.Size(377, 291);
+            this.ClientSize = new System.Drawing.Size(186, 241);
             this.Controls.Add(this.gbxBuscar);
             this.MaximizeBox = false;
             this.Name = "frmListado";
@@ -109,9 +124,10 @@
         #endregion
 
         private System.Windows.Forms.GroupBox gbxBuscar;
-        private System.Windows.Forms.CheckBox chbPlan;
-        private System.Windows.Forms.CheckBox chbNombre;
-        private System.Windows.Forms.CheckBox chbCodigo;
-        private System.Windows.Forms.CheckBox chbTodo;
+        private System.Windows.Forms.RadioButton rbPlan;
+        private System.Windows.Forms.RadioButton rbNombre;
+        private System.Windows.Forms.RadioButton rbCodigo;
+        private System.Windows.Forms.RadioButton rbTodo;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }
