@@ -80,6 +80,7 @@
             this.Name = "frmAcademia";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio";
+            this.Load += new System.EventHandler(this.frmAcademia_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbInstituto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -12,6 +12,12 @@ namespace pryTorresJAcademia
 {
     public partial class frmRegistro : Form
     {
+        public DateTime VarInicioSesion;
+
+        int varCodigo;
+        string varNombre;
+        string varPlan;
+        bool varEstado;
         public frmRegistro()
         {
             InitializeComponent();
@@ -44,7 +50,7 @@ namespace pryTorresJAcademia
             }
             else
             {
-                MessageBox.Show("Registro con éxito");
+                MessageBox.Show("Registro con éxito", "Registro", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 this.Close();
 
                 
@@ -54,7 +60,10 @@ namespace pryTorresJAcademia
 
         private void btnListado_Click(object sender, EventArgs e)
         {
-
+            frmListado frmListado = new frmListado();
+            this.Hide();
+            frmListado.ShowDialog();
+            this.Show();
         }
     }
 }

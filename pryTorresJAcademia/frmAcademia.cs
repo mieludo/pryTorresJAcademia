@@ -30,5 +30,12 @@ namespace pryTorresJAcademia
             
             frmRegistro.ShowDialog();
         }
+
+        private void frmAcademia_Load(object sender, EventArgs e)
+        {
+            //Almacenar la fecha y hora de inicio de sesión
+            //Variables
+            //VarInicioSesion == DateTime.Now; //Inicio de variables
+        }
     }
 }
