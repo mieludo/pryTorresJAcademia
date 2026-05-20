@@ -37,5 +37,40 @@ namespace pryTorresJAcademia
                 MessageBox.Show("Nombre registrado con éxito", "Registro de datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            if (tbNombre.Text != "")
+                arrayPlan[varIndice] = tbNombre.Text;
+            varIndice++;
+
+            tbNombre.Clear();
+
+            {
+                MessageBox.Show("Nombre registrado con éxito", "Registro de datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            if (varIndice > arrayPlan.Length)
+            {
+                MessageBox.Show("No se pueden cargar más planes", "Registro de datos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                btnRegistrar.Enabled = false;
+            }
+
+        }
+
+        private void btnListar_Click(object sender, EventArgs e)
+        {
+            //int indiceRecorrido = 0;
+
+            //while (indiceRecorrido < arrayPlan.Length)
+            //{
+            //   lstPlanes.Items.Add(arrayPlan[indiceRecorrido]);
+            //    indiceRecorrido++;
+            //}
+
+            for (int i = 0; i < arrayPlan.Length; i++)
+            {
+                lstPlanes.Items.Add(arrayPlan[i]);
+            }
+        }
     }
 }

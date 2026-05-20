@@ -33,6 +33,7 @@
             this.btnListar = new System.Windows.Forms.Button();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.tbNombre = new System.Windows.Forms.TextBox();
+            this.lstPlanes = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // lblNombre
@@ -54,6 +55,7 @@
             this.btnListar.TabIndex = 2;
             this.btnListar.Text = "Listar";
             this.btnListar.UseVisualStyleBackColor = true;
+            this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
             // 
             // btnRegistrar
             // 
@@ -63,6 +65,7 @@
             this.btnRegistrar.TabIndex = 3;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = true;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // tbNombre
             // 
@@ -71,12 +74,21 @@
             this.tbNombre.Size = new System.Drawing.Size(103, 20);
             this.tbNombre.TabIndex = 4;
             // 
+            // lstPlanes
+            // 
+            this.lstPlanes.FormattingEnabled = true;
+            this.lstPlanes.Location = new System.Drawing.Point(55, 148);
+            this.lstPlanes.Name = "lstPlanes";
+            this.lstPlanes.Size = new System.Drawing.Size(217, 108);
+            this.lstPlanes.TabIndex = 5;
+            // 
             // frmCargaPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.ClientSize = new System.Drawing.Size(326, 185);
+            this.ClientSize = new System.Drawing.Size(326, 288);
+            this.Controls.Add(this.lstPlanes);
             this.Controls.Add(this.tbNombre);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.btnListar);
@@ -96,5 +108,6 @@
         private System.Windows.Forms.Button btnListar;
         private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.TextBox tbNombre;
+        private System.Windows.Forms.ListBox lstPlanes;
     }
 }

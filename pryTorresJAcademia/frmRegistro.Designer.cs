@@ -163,9 +163,9 @@
             // 
             // btnCarga
             // 
-            this.btnCarga.Location = new System.Drawing.Point(250, 361);
+            this.btnCarga.Location = new System.Drawing.Point(101, 332);
             this.btnCarga.Name = "btnCarga";
-            this.btnCarga.Size = new System.Drawing.Size(83, 23);
+            this.btnCarga.Size = new System.Drawing.Size(143, 23);
             this.btnCarga.TabIndex = 13;
             this.btnCarga.Text = "Carga de Plan";
             this.btnCarga.UseVisualStyleBackColor = true;
@@ -176,7 +176,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(479, 417);
+            this.ClientSize = new System.Drawing.Size(267, 417);
             this.Controls.Add(this.btnCarga);
             this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.mtbCodigo);
