@@ -66,5 +66,10 @@ namespace pryTorresJAcademia
             frmListado.ShowDialog();
             this.Show();
         }
+
+        private void btnCarga_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

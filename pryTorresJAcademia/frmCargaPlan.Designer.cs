@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCargaPlan));
             this.lblNombre = new System.Windows.Forms.Label();
-            this.cbxNombre = new System.Windows.Forms.ComboBox();
             this.btnListar = new System.Windows.Forms.Button();
             this.btnRegistrar = new System.Windows.Forms.Button();
+            this.tbNombre = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblNombre
@@ -45,14 +45,6 @@
             this.lblNombre.TabIndex = 0;
             this.lblNombre.Text = "Nombre";
             this.lblNombre.Click += new System.EventHandler(this.lblNombre_Click);
-            // 
-            // cbxNombre
-            // 
-            this.cbxNombre.FormattingEnabled = true;
-            this.cbxNombre.Location = new System.Drawing.Point(151, 49);
-            this.cbxNombre.Name = "cbxNombre";
-            this.cbxNombre.Size = new System.Drawing.Size(121, 21);
-            this.cbxNombre.TabIndex = 1;
             // 
             // btnListar
             // 
@@ -72,15 +64,22 @@
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = true;
             // 
+            // tbNombre
+            // 
+            this.tbNombre.Location = new System.Drawing.Point(169, 49);
+            this.tbNombre.Name = "tbNombre";
+            this.tbNombre.Size = new System.Drawing.Size(103, 20);
+            this.tbNombre.TabIndex = 4;
+            // 
             // frmCargaPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.ClientSize = new System.Drawing.Size(326, 185);
+            this.Controls.Add(this.tbNombre);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.btnListar);
-            this.Controls.Add(this.cbxNombre);
             this.Controls.Add(this.lblNombre);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmCargaPlan";
@@ -94,8 +93,8 @@
         #endregion
 
         private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.ComboBox cbxNombre;
         private System.Windows.Forms.Button btnListar;
         private System.Windows.Forms.Button btnRegistrar;
+        private System.Windows.Forms.TextBox tbNombre;
     }
 }

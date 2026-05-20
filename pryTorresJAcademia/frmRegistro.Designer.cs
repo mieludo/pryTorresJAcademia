@@ -41,6 +41,7 @@
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.mtbCodigo = new System.Windows.Forms.MaskedTextBox();
             this.lblInfo = new System.Windows.Forms.Label();
+            this.btnCarga = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblCodigo
@@ -160,12 +161,23 @@
             this.lblInfo.TabIndex = 12;
             this.lblInfo.Text = "Registro Materia/Asignatura";
             // 
+            // btnCarga
+            // 
+            this.btnCarga.Location = new System.Drawing.Point(250, 361);
+            this.btnCarga.Name = "btnCarga";
+            this.btnCarga.Size = new System.Drawing.Size(83, 23);
+            this.btnCarga.TabIndex = 13;
+            this.btnCarga.Text = "Carga de Plan";
+            this.btnCarga.UseVisualStyleBackColor = true;
+            this.btnCarga.Click += new System.EventHandler(this.btnCarga_Click);
+            // 
             // frmRegistro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(290, 417);
+            this.ClientSize = new System.Drawing.Size(479, 417);
+            this.Controls.Add(this.btnCarga);
             this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.mtbCodigo);
             this.Controls.Add(this.btnRegistrar);
@@ -202,5 +214,6 @@
         private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.MaskedTextBox mtbCodigo;
         private System.Windows.Forms.Label lblInfo;
+        private System.Windows.Forms.Button btnCarga;
     }
 }

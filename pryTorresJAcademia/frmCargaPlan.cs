@@ -12,6 +12,12 @@ namespace pryTorresJAcademia
 {
     public partial class frmCargaPlan : Form
     {
+        //Declaración --> string[] arrayPlan --- array de una
+        //Dimensión - vector
+        string[] arrayPlan = new string[4];
+        //crea memoria y declara los espacios --> = new string[4];
+
+        int varIndice = 0;
         public frmCargaPlan()
         {
             InitializeComponent();
@@ -24,12 +30,12 @@ namespace pryTorresJAcademia
 
         private void frmCargaPlan_Load(object sender, EventArgs e)
         {
-            //Declaración --> string[] arrayPlan --- array de una
-            //Dimensión - vector
-            string[] arrayPlan = new string[4];
-            //crea memoria y declara los espacios --> = new string[4];
-
-            int varIndice = 0;
+            if (tbNombre.Text != "")
+                arrayPlan[varIndice] = tbNombre.Text;
+            varIndice++;
+            {
+                MessageBox.Show("Nombre registrado con éxito", "Registro de datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }
