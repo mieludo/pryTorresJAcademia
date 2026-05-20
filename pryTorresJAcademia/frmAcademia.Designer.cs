@@ -31,8 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAcademia));
             this.lblBienvenido = new System.Windows.Forms.Label();
             this.btnIniciar = new System.Windows.Forms.Button();
-            this.pbInstituto = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pbInstituto)).BeginInit();
             this.SuspendLayout();
             // 
             // lblBienvenido
@@ -41,7 +39,7 @@
             this.lblBienvenido.BackColor = System.Drawing.Color.Transparent;
             this.lblBienvenido.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBienvenido.ForeColor = System.Drawing.Color.Red;
-            this.lblBienvenido.Location = new System.Drawing.Point(198, 114);
+            this.lblBienvenido.Location = new System.Drawing.Point(192, 114);
             this.lblBienvenido.Name = "lblBienvenido";
             this.lblBienvenido.Size = new System.Drawing.Size(262, 50);
             this.lblBienvenido.TabIndex = 0;
@@ -59,30 +57,20 @@
             this.btnIniciar.UseVisualStyleBackColor = true;
             this.btnIniciar.Click += new System.EventHandler(this.btnIniciar_Click);
             // 
-            // pbInstituto
-            // 
-            this.pbInstituto.Image = ((System.Drawing.Image)(resources.GetObject("pbInstituto.Image")));
-            this.pbInstituto.Location = new System.Drawing.Point(0, 0);
-            this.pbInstituto.Name = "pbInstituto";
-            this.pbInstituto.Size = new System.Drawing.Size(648, 417);
-            this.pbInstituto.TabIndex = 2;
-            this.pbInstituto.TabStop = false;
-            // 
             // frmAcademia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(643, 415);
             this.Controls.Add(this.btnIniciar);
             this.Controls.Add(this.lblBienvenido);
-            this.Controls.Add(this.pbInstituto);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmAcademia";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio";
             this.Load += new System.EventHandler(this.frmAcademia_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pbInstituto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -92,7 +80,6 @@
 
         private System.Windows.Forms.Label lblBienvenido;
         private System.Windows.Forms.Button btnIniciar;
-        private System.Windows.Forms.PictureBox pbInstituto;
     }
 }
 

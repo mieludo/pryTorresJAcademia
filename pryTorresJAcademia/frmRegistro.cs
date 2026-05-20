@@ -18,6 +18,10 @@ namespace pryTorresJAcademia
         string varNombre;
         string varPlan;
         bool varEstado;
+
+        int indiceFila = 0;
+        string[,] matMaterias = new string[2,5];
+
         public frmRegistro()
         {
             InitializeComponent();
@@ -29,23 +33,33 @@ namespace pryTorresJAcademia
 
             if (tbNombre.Text == "" || cbxPlan.Text == "" || mtbCodigo.Text == "")
             {
-                MessageBox.Show("Debe completar todos los casilleros", "Registro academico", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); 
+                MessageBox.Show("Debe completar todos los casilleros", "Registro académico", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); 
             }
             else
             {
                 MessageBox.Show("Registro con éxito", "Registro", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 this.Close();
 
+                matMaterias[indiceFila, 0] = mtbCodigo.Text;
+                matMaterias[indiceFila, 1] = tbNombre.Text;
+                matMaterias[indiceFila, 2] = cbxPlan.Text;
+                
+
                 string estado;
 
                 if (chbActivo.Checked)
                 {
+                    matMaterias[indiceFila,3] = "Activo";
+                    varEstado = true;
                     estado = "Activo";
                 }
                 else
                 {
+                    matMaterias[indiceFila,3] = "Inactivo";
+                    varEstado = false;
                     estado = "Inactivo";
                 }
+                
                 MessageBox.Show(
                     "Registro completo\n\n" +
                     "Código: " + mtbCodigo.Text +
@@ -56,6 +70,7 @@ namespace pryTorresJAcademia
 
 
             }
+            indiceFila++;
         }
         
 
@@ -69,7 +84,20 @@ namespace pryTorresJAcademia
 
         private void btnCarga_Click(object sender, EventArgs e)
         {
+            frmCargaPlan frmCargaPlan = new frmCargaPlan();
+            this.Hide();
+            frmCargaPlan.ShowDialog();
+            this.Show();
+        }
 
+        private void frmRegistro_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

@@ -131,6 +131,7 @@
             this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnRegistrar
             // 
@@ -163,9 +164,9 @@
             // 
             // btnCarga
             // 
-            this.btnCarga.Location = new System.Drawing.Point(101, 332);
+            this.btnCarga.Location = new System.Drawing.Point(138, 229);
             this.btnCarga.Name = "btnCarga";
-            this.btnCarga.Size = new System.Drawing.Size(143, 23);
+            this.btnCarga.Size = new System.Drawing.Size(100, 23);
             this.btnCarga.TabIndex = 13;
             this.btnCarga.Text = "Carga de Plan";
             this.btnCarga.UseVisualStyleBackColor = true;
@@ -195,6 +196,7 @@
             this.Name = "frmRegistro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro";
+            this.Load += new System.EventHandler(this.frmRegistro_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
