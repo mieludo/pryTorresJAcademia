@@ -76,6 +76,7 @@
             this.Controls.Add(this.btnIniciar);
             this.Controls.Add(this.lblBienvenido);
             this.Controls.Add(this.pbInstituto);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmAcademia";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

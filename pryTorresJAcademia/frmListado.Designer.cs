@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListado));
             this.gbxBuscar = new System.Windows.Forms.GroupBox();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.rbTodo = new System.Windows.Forms.RadioButton();
-            this.rbCodigo = new System.Windows.Forms.RadioButton();
-            this.rbNombre = new System.Windows.Forms.RadioButton();
             this.rbPlan = new System.Windows.Forms.RadioButton();
+            this.rbNombre = new System.Windows.Forms.RadioButton();
+            this.rbCodigo = new System.Windows.Forms.RadioButton();
+            this.rbTodo = new System.Windows.Forms.RadioButton();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.gbxBuscar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,36 +52,16 @@
             this.gbxBuscar.TabStop = false;
             this.gbxBuscar.Text = "Buscar";
             // 
-            // btnBuscar
+            // rbPlan
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(24, 140);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscar.TabIndex = 1;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            // 
-            // rbTodo
-            // 
-            this.rbTodo.AutoSize = true;
-            this.rbTodo.Location = new System.Drawing.Point(24, 31);
-            this.rbTodo.Name = "rbTodo";
-            this.rbTodo.Size = new System.Drawing.Size(50, 17);
-            this.rbTodo.TabIndex = 2;
-            this.rbTodo.TabStop = true;
-            this.rbTodo.Text = "Todo";
-            this.rbTodo.UseVisualStyleBackColor = true;
-            // 
-            // rbCodigo
-            // 
-            this.rbCodigo.AutoSize = true;
-            this.rbCodigo.Location = new System.Drawing.Point(24, 54);
-            this.rbCodigo.Name = "rbCodigo";
-            this.rbCodigo.Size = new System.Drawing.Size(58, 17);
-            this.rbCodigo.TabIndex = 3;
-            this.rbCodigo.TabStop = true;
-            this.rbCodigo.Text = "Código";
-            this.rbCodigo.UseVisualStyleBackColor = true;
+            this.rbPlan.AutoSize = true;
+            this.rbPlan.Location = new System.Drawing.Point(24, 100);
+            this.rbPlan.Name = "rbPlan";
+            this.rbPlan.Size = new System.Drawing.Size(46, 17);
+            this.rbPlan.TabIndex = 5;
+            this.rbPlan.TabStop = true;
+            this.rbPlan.Text = "Plan";
+            this.rbPlan.UseVisualStyleBackColor = true;
             // 
             // rbNombre
             // 
@@ -93,16 +74,36 @@
             this.rbNombre.Text = "Nombre";
             this.rbNombre.UseVisualStyleBackColor = true;
             // 
-            // rbPlan
+            // rbCodigo
             // 
-            this.rbPlan.AutoSize = true;
-            this.rbPlan.Location = new System.Drawing.Point(24, 100);
-            this.rbPlan.Name = "rbPlan";
-            this.rbPlan.Size = new System.Drawing.Size(46, 17);
-            this.rbPlan.TabIndex = 5;
-            this.rbPlan.TabStop = true;
-            this.rbPlan.Text = "Plan";
-            this.rbPlan.UseVisualStyleBackColor = true;
+            this.rbCodigo.AutoSize = true;
+            this.rbCodigo.Location = new System.Drawing.Point(24, 54);
+            this.rbCodigo.Name = "rbCodigo";
+            this.rbCodigo.Size = new System.Drawing.Size(58, 17);
+            this.rbCodigo.TabIndex = 3;
+            this.rbCodigo.TabStop = true;
+            this.rbCodigo.Text = "Código";
+            this.rbCodigo.UseVisualStyleBackColor = true;
+            // 
+            // rbTodo
+            // 
+            this.rbTodo.AutoSize = true;
+            this.rbTodo.Location = new System.Drawing.Point(24, 31);
+            this.rbTodo.Name = "rbTodo";
+            this.rbTodo.Size = new System.Drawing.Size(50, 17);
+            this.rbTodo.TabIndex = 2;
+            this.rbTodo.TabStop = true;
+            this.rbTodo.Text = "Todo";
+            this.rbTodo.UseVisualStyleBackColor = true;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(24, 140);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.TabIndex = 1;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
             // 
             // frmListado
             // 
@@ -111,6 +112,7 @@
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(186, 241);
             this.Controls.Add(this.gbxBuscar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmListado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
