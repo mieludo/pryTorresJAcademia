@@ -37,8 +37,9 @@ namespace pryTorresJAcademia
             }
             else
             {
-                MessageBox.Show("Registro con éxito", "Registro", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                this.Close();
+                // varcodigo = Convert.ToInt32(mtbCodigo.Text);
+                // varNombre = tbNombre.Text;
+                // varPlan = cbxPlan.Text;
 
                 matMaterias[indiceFila, 0] = mtbCodigo.Text;
                 matMaterias[indiceFila, 1] = tbNombre.Text;
