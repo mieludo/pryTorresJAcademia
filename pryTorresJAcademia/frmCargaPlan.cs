@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,7 +15,7 @@ namespace pryTorresJAcademia
     {
         //Declaración --> string[] arrayPlan --- array de una
         //Dimensión - vector
-        string[] arrayPlan = new string[4];
+        string[] arrPlan = new string[4];
         //crea memoria y declara los espacios --> = new string[4];
 
         int varIndice = 0;
@@ -31,7 +32,7 @@ namespace pryTorresJAcademia
         private void frmCargaPlan_Load(object sender, EventArgs e)
         {
             if (tbNombre.Text != "")
-                arrayPlan[varIndice] = tbNombre.Text;
+                arrPlan[varIndice] = tbNombre.Text;
             varIndice++;
             {
                 MessageBox.Show("Nombre registrado con éxito", "Registro de datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -41,18 +42,21 @@ namespace pryTorresJAcademia
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             if (tbNombre.Text != "")
-                arrayPlan[varIndice] = tbNombre.Text;
+
+                arrPlan[varIndice] = tbNombre.Text;
             varIndice++;
 
             tbNombre.Clear();
 
+
             {
                 MessageBox.Show("Nombre registrado con éxito", "Registro de datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            if (varIndice > arrayPlan.Length)
+            if (varIndice >= arrPlan.Length)
             {
                 MessageBox.Show("No se pueden cargar más planes", "Registro de datos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 btnRegistrar.Enabled = false;
+                return;
             }
 
         }
@@ -60,17 +64,20 @@ namespace pryTorresJAcademia
         private void btnListar_Click(object sender, EventArgs e)
         {
             //int indiceRecorrido = 0;
+            lstPlanes.Items.Clear();
+            string planesRegistrados = "Planes registrados:\n";
 
-            //while (indiceRecorrido < arrayPlan.Length)
-            //{
-            //   lstPlanes.Items.Add(arrayPlan[indiceRecorrido]);
-            //    indiceRecorrido++;
-            //}
-
-            for (int i = 0; i < arrayPlan.Length; i++)
+            for (int i = 0; i < arrPlan.Length; i++)
             {
-                lstPlanes.Items.Add(arrayPlan[i]);
+                if (string.IsNullOrEmpty(arrPlan[i]))
+
+
+                    planesRegistrados += $"{i + 1}. {arrPlan[i]}\n";
+                lstPlanes.Items.Add(arrPlan[i]);
+
+                MessageBox.Show(planesRegistrados, "Listado de Planes", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }
 }
+

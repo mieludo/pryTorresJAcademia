@@ -118,7 +118,7 @@
             this.btnListado.Location = new System.Drawing.Point(26, 361);
             this.btnListado.Name = "btnListado";
             this.btnListado.Size = new System.Drawing.Size(69, 23);
-            this.btnListado.TabIndex = 6;
+            this.btnListado.TabIndex = 4;
             this.btnListado.Text = "Listado";
             this.btnListado.UseVisualStyleBackColor = true;
             this.btnListado.Click += new System.EventHandler(this.btnListado_Click);
@@ -138,7 +138,7 @@
             this.btnRegistrar.Location = new System.Drawing.Point(175, 361);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(69, 23);
-            this.btnRegistrar.TabIndex = 4;
+            this.btnRegistrar.TabIndex = 6;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = true;
             this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
@@ -167,7 +167,7 @@
             this.btnCarga.Location = new System.Drawing.Point(138, 229);
             this.btnCarga.Name = "btnCarga";
             this.btnCarga.Size = new System.Drawing.Size(100, 23);
-            this.btnCarga.TabIndex = 13;
+            this.btnCarga.TabIndex = 3;
             this.btnCarga.Text = "Carga de Plan";
             this.btnCarga.UseVisualStyleBackColor = true;
             this.btnCarga.Click += new System.EventHandler(this.btnCarga_Click);

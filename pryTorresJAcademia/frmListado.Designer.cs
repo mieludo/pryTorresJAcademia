@@ -35,7 +35,13 @@
             this.rbCodigo = new System.Windows.Forms.RadioButton();
             this.rbTodo = new System.Windows.Forms.RadioButton();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Código = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Columna2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Columna3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Columna4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbxBuscar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // gbxBuscar
@@ -58,7 +64,7 @@
             this.rbPlan.Location = new System.Drawing.Point(24, 100);
             this.rbPlan.Name = "rbPlan";
             this.rbPlan.Size = new System.Drawing.Size(46, 17);
-            this.rbPlan.TabIndex = 5;
+            this.rbPlan.TabIndex = 3;
             this.rbPlan.TabStop = true;
             this.rbPlan.Text = "Plan";
             this.rbPlan.UseVisualStyleBackColor = true;
@@ -69,7 +75,7 @@
             this.rbNombre.Location = new System.Drawing.Point(24, 77);
             this.rbNombre.Name = "rbNombre";
             this.rbNombre.Size = new System.Drawing.Size(62, 17);
-            this.rbNombre.TabIndex = 4;
+            this.rbNombre.TabIndex = 2;
             this.rbNombre.TabStop = true;
             this.rbNombre.Text = "Nombre";
             this.rbNombre.UseVisualStyleBackColor = true;
@@ -80,7 +86,7 @@
             this.rbCodigo.Location = new System.Drawing.Point(24, 54);
             this.rbCodigo.Name = "rbCodigo";
             this.rbCodigo.Size = new System.Drawing.Size(58, 17);
-            this.rbCodigo.TabIndex = 3;
+            this.rbCodigo.TabIndex = 1;
             this.rbCodigo.TabStop = true;
             this.rbCodigo.Text = "Código";
             this.rbCodigo.UseVisualStyleBackColor = true;
@@ -91,7 +97,7 @@
             this.rbTodo.Location = new System.Drawing.Point(24, 31);
             this.rbTodo.Name = "rbTodo";
             this.rbTodo.Size = new System.Drawing.Size(50, 17);
-            this.rbTodo.TabIndex = 2;
+            this.rbTodo.TabIndex = 0;
             this.rbTodo.TabStop = true;
             this.rbTodo.Text = "Todo";
             this.rbTodo.UseVisualStyleBackColor = true;
@@ -101,16 +107,50 @@
             this.btnBuscar.Location = new System.Drawing.Point(24, 140);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscar.TabIndex = 1;
+            this.btnBuscar.TabIndex = 4;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Código,
+            this.Columna2,
+            this.Columna3,
+            this.Columna4});
+            this.dataGridView1.Location = new System.Drawing.Point(190, 25);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(444, 193);
+            this.dataGridView1.TabIndex = 1;
+            // 
+            // Código
+            // 
+            this.Código.HeaderText = "Código";
+            this.Código.Name = "Código";
+            // 
+            // Columna2
+            // 
+            this.Columna2.HeaderText = "Nombre";
+            this.Columna2.Name = "Columna2";
+            // 
+            // Columna3
+            // 
+            this.Columna3.HeaderText = "Plan";
+            this.Columna3.Name = "Columna3";
+            // 
+            // Columna4
+            // 
+            this.Columna4.HeaderText = "Activo";
+            this.Columna4.Name = "Columna4";
             // 
             // frmListado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ClientSize = new System.Drawing.Size(186, 241);
+            this.ClientSize = new System.Drawing.Size(650, 241);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.gbxBuscar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -119,6 +159,7 @@
             this.Text = "Listado";
             this.gbxBuscar.ResumeLayout(false);
             this.gbxBuscar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -131,5 +172,10 @@
         private System.Windows.Forms.RadioButton rbCodigo;
         private System.Windows.Forms.RadioButton rbTodo;
         private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Código;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Columna2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Columna3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Columna4;
     }
 }

@@ -52,7 +52,7 @@
             this.btnListar.Location = new System.Drawing.Point(55, 103);
             this.btnListar.Name = "btnListar";
             this.btnListar.Size = new System.Drawing.Size(97, 23);
-            this.btnListar.TabIndex = 2;
+            this.btnListar.TabIndex = 1;
             this.btnListar.Text = "Listar";
             this.btnListar.UseVisualStyleBackColor = true;
             this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
@@ -62,7 +62,7 @@
             this.btnRegistrar.Location = new System.Drawing.Point(169, 103);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(103, 23);
-            this.btnRegistrar.TabIndex = 3;
+            this.btnRegistrar.TabIndex = 2;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = true;
             this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
@@ -72,7 +72,7 @@
             this.tbNombre.Location = new System.Drawing.Point(169, 49);
             this.tbNombre.Name = "tbNombre";
             this.tbNombre.Size = new System.Drawing.Size(103, 20);
-            this.tbNombre.TabIndex = 4;
+            this.tbNombre.TabIndex = 0;
             // 
             // lstPlanes
             // 
@@ -80,7 +80,7 @@
             this.lstPlanes.Location = new System.Drawing.Point(55, 148);
             this.lstPlanes.Name = "lstPlanes";
             this.lstPlanes.Size = new System.Drawing.Size(217, 108);
-            this.lstPlanes.TabIndex = 5;
+            this.lstPlanes.TabIndex = 3;
             // 
             // frmCargaPlan
             // 
