@@ -37,5 +37,13 @@ namespace pryTorresJAcademia
             //Variables
             //VarInicioSesion == DateTime.Now; //Inicio de variables
         }
+
+        private void btnAlumnos_Click(object sender, EventArgs e)
+        {
+            frmAlumno frmAlumno = new frmAlumno();
+            this.Hide();
+            frmAlumno.ShowDialog();
+            this.Close();
+        }
     }
 }
