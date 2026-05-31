@@ -13,15 +13,14 @@ namespace pryTorresJAcademia
 {
     public partial class frmCargaPlan : Form
     {
-        //Declaración --> string[] arrayPlan --- array de una
-        //Dimensión - vector
-        string[] arrPlan = new string[4];
-        //crea memoria y declara los espacios --> = new string[4];
-
         int varIndice = 0;
-        public frmCargaPlan()
+        public string[] arrPlanes = new string[3];
+
+
+        public frmCargaPlan(string[] arrPlanesRecibido)
         {
             InitializeComponent();
+            arrPlanes = arrPlanesRecibido;
         }
 
         private void lblNombre_Click(object sender, EventArgs e)
@@ -32,7 +31,7 @@ namespace pryTorresJAcademia
         private void frmCargaPlan_Load(object sender, EventArgs e)
         {
             if (tbNombre.Text != "")
-                arrPlan[varIndice] = tbNombre.Text;
+                arrPlanes[varIndice] = tbNombre.Text;
             varIndice++;
             {
                 MessageBox.Show("Nombre registrado con éxito", "Registro de datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -43,7 +42,7 @@ namespace pryTorresJAcademia
         {
             if (tbNombre.Text != "")
 
-                arrPlan[varIndice] = tbNombre.Text;
+                arrPlanes[varIndice] = tbNombre.Text;
             varIndice++;
 
             tbNombre.Clear();
@@ -52,7 +51,7 @@ namespace pryTorresJAcademia
             {
                 MessageBox.Show("Nombre registrado con éxito", "Registro de datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            if (varIndice >= arrPlan.Length)
+            if (varIndice >= arrPlanes.Length)
             {
                 MessageBox.Show("No se pueden cargar más planes", "Registro de datos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 btnRegistrar.Enabled = false;
@@ -63,21 +62,34 @@ namespace pryTorresJAcademia
 
         private void btnListar_Click(object sender, EventArgs e)
         {
-            //int indiceRecorrido = 0;
-            lstPlanes.Items.Clear();
             string planesRegistrados = "Planes registrados:\n";
-
-            for (int i = 0; i < arrPlan.Length; i++)
+            for (int i = 0; i < arrPlanes.Length; i++)
             {
-                if (string.IsNullOrEmpty(arrPlan[i]))
+                if (arrPlanes[i] != null)
+                {
+                    planesRegistrados += $"{i + 1}. {arrPlanes[i]}\n";
+                }
+            }
+            MessageBox.Show(planesRegistrados, "Listado de Planes", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
-                    planesRegistrados += $"{i + 1}. {arrPlan[i]}\n";
-                lstPlanes.Items.Add(arrPlan[i]);
 
-                MessageBox.Show(planesRegistrados, "Listado de Planes", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void tbNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void btnListar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btnRegistrar.PerformClick();
             }
         }
     }
 }
+
 

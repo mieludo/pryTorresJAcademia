@@ -14,13 +14,15 @@ namespace pryTorresJAcademia
     {
         public DateTime VarInicioSesion;
 
-        int varCodigo;
-        string varNombre;
-        string varPlan;
-        bool varEstado;
+        //int varCodigo;
+        //string varNombre;
+        //string varPlan;
+        //bool varEstado;
 
+        
+        string[,] arrMaterias = new string[2, 4];
+        string[] arrPlanes = new string[3];
         int indiceFila = 0;
-        string[,] matMaterias = new string[2,5];
 
         public frmRegistro()
         {
@@ -33,62 +35,68 @@ namespace pryTorresJAcademia
 
             if (tbNombre.Text == "" || cbxPlan.Text == "" || mtbCodigo.Text == "")
             {
-                MessageBox.Show("Debe completar todos los casilleros", "Registro académico", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); 
+                MessageBox.Show("Debe completar todos los casilleros", "Registro académico", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
-                // varcodigo = Convert.ToInt32(mtbCodigo.Text);
-                // varNombre = tbNombre.Text;
-                // varPlan = cbxPlan.Text;
+                if (
+              string.IsNullOrWhiteSpace(mtbCodigo.Text) ||
+              string.IsNullOrWhiteSpace(tbNombre.Text) ||
+              cbxPlan.SelectedIndex == -1
+           )
+                {
+                    MessageBox.Show("Complete todos los campos y seleccione un plan.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
 
-                matMaterias[indiceFila, 0] = mtbCodigo.Text;
-                matMaterias[indiceFila, 1] = tbNombre.Text;
-                matMaterias[indiceFila, 2] = cbxPlan.Text;
-                
+                if (indiceFila >= arrMaterias.GetLength(0))
+                {
+                    MessageBox.Show("Límite de materias alcanzado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
-                string estado;
+                arrMaterias[indiceFila, 0] = mtbCodigo.Text;
+                arrMaterias[indiceFila, 1] = tbNombre.Text;
+                arrMaterias[indiceFila, 2] = cbxPlan.SelectedItem.ToString();
 
                 if (chbActivo.Checked)
                 {
-                    matMaterias[indiceFila,3] = "Activo";
-                    varEstado = true;
-                    estado = "Activo";
+                    arrMaterias[indiceFila, 3] = "Activo";
                 }
                 else
                 {
-                    matMaterias[indiceFila,3] = "Inactivo";
-                    varEstado = false;
-                    estado = "Inactivo";
+                    arrMaterias[indiceFila, 3] = "Inactivo";
                 }
-                
-                MessageBox.Show(
-                    "Registro completo\n\n" +
-                    "Código: " + mtbCodigo.Text +
-                    "\nNombre: " + tbNombre.Text +
-                    "\nPlan: " + cbxPlan.Text +
-                    "\nEstado: " + estado);
-        
 
+                mtbCodigo.Clear();
+                tbNombre.Clear();
+                cbxPlan.SelectedIndex = -1;
+                chbActivo.Checked = false;
 
+                indiceFila++;
+
+                MessageBox.Show("Materia registrada con éxito.", "Registro completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            indiceFila++;
         }
         
 
         private void btnListado_Click(object sender, EventArgs e)
         {
-            frmListado frmListado = new frmListado();
-            this.Hide();
+            frmListado frmListado = new frmListado(arrPlanes);
+            frmListado.arrMateriasListado = arrMaterias;
+
             frmListado.ShowDialog();
-            this.Show();
         }
 
         private void btnCarga_Click(object sender, EventArgs e)
         {
-            frmCargaPlan frmCargaPlan = new frmCargaPlan();
-            this.Hide();
+            frmCargaPlan frmCargaPlan = new frmCargaPlan(arrPlanes);
+            frmCargaPlan.arrPlanes = arrPlanes;
             frmCargaPlan.ShowDialog();
-            this.Show();
+
+            cbxPlan.DataSource = null;
+            cbxPlan.DataSource = arrPlanes;
+
+
         }
 
         private void frmRegistro_Load(object sender, EventArgs e)
