@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListado));
             this.gbxBuscar = new System.Windows.Forms.GroupBox();
+            this.lstPlan = new System.Windows.Forms.ComboBox();
+            this.tbNombre = new System.Windows.Forms.TextBox();
+            this.tbCodigo = new System.Windows.Forms.MaskedTextBox();
             this.rbPlan = new System.Windows.Forms.RadioButton();
             this.rbNombre = new System.Windows.Forms.RadioButton();
             this.rbCodigo = new System.Windows.Forms.RadioButton();
@@ -40,9 +43,6 @@
             this.Columna2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Columna3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Columna4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tbCodigo = new System.Windows.Forms.MaskedTextBox();
-            this.tbNombre = new System.Windows.Forms.TextBox();
-            this.lstPlan = new System.Windows.Forms.ComboBox();
             this.gbxBuscar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaterias)).BeginInit();
             this.SuspendLayout();
@@ -63,6 +63,29 @@
             this.gbxBuscar.TabIndex = 0;
             this.gbxBuscar.TabStop = false;
             this.gbxBuscar.Text = "Buscar";
+            // 
+            // lstPlan
+            // 
+            this.lstPlan.FormattingEnabled = true;
+            this.lstPlan.Location = new System.Drawing.Point(109, 106);
+            this.lstPlan.Name = "lstPlan";
+            this.lstPlan.Size = new System.Drawing.Size(144, 21);
+            this.lstPlan.TabIndex = 3;
+            // 
+            // tbNombre
+            // 
+            this.tbNombre.Location = new System.Drawing.Point(110, 79);
+            this.tbNombre.Name = "tbNombre";
+            this.tbNombre.Size = new System.Drawing.Size(143, 20);
+            this.tbNombre.TabIndex = 2;
+            // 
+            // tbCodigo
+            // 
+            this.tbCodigo.Location = new System.Drawing.Point(110, 51);
+            this.tbCodigo.Mask = "0000";
+            this.tbCodigo.Name = "tbCodigo";
+            this.tbCodigo.Size = new System.Drawing.Size(143, 20);
+            this.tbCodigo.TabIndex = 1;
             // 
             // rbPlan
             // 
@@ -150,29 +173,6 @@
             // 
             this.Columna4.HeaderText = "Activo";
             this.Columna4.Name = "Columna4";
-            // 
-            // tbCodigo
-            // 
-            this.tbCodigo.Location = new System.Drawing.Point(110, 51);
-            this.tbCodigo.Mask = "0000";
-            this.tbCodigo.Name = "tbCodigo";
-            this.tbCodigo.Size = new System.Drawing.Size(143, 20);
-            this.tbCodigo.TabIndex = 5;
-            // 
-            // tbNombre
-            // 
-            this.tbNombre.Location = new System.Drawing.Point(110, 79);
-            this.tbNombre.Name = "tbNombre";
-            this.tbNombre.Size = new System.Drawing.Size(143, 20);
-            this.tbNombre.TabIndex = 6;
-            // 
-            // lstPlan
-            // 
-            this.lstPlan.FormattingEnabled = true;
-            this.lstPlan.Location = new System.Drawing.Point(109, 106);
-            this.lstPlan.Name = "lstPlan";
-            this.lstPlan.Size = new System.Drawing.Size(144, 21);
-            this.lstPlan.TabIndex = 7;
             // 
             // frmListado
             // 

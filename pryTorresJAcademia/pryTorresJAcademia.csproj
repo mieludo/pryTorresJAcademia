@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>pngtree-education-symbol-vector-icon-illustration-ceremony-academy-logo-vector-png-image_37789952.ico</ApplicationIcon>
+    <ApplicationIcon>ChatGPT Image 1 jun 2026, 08_48_12.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -119,6 +119,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ChatGPT Image 1 jun 2026, 08_48_12.ico" />
     <Content Include="pngtree-education-symbol-vector-icon-illustration-ceremony-academy-logo-vector-png-image_37789952.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -62,15 +62,14 @@ namespace pryTorresJAcademia
 
         private void btnListar_Click(object sender, EventArgs e)
         {
-            string planesRegistrados = "Planes registrados:\n";
-            for (int i = 0; i < arrPlanes.Length; i++)
+            lstPlan.Items.Clear();
+            for (int count = 0; count < arrPlanes.Length; count++)
             {
-                if (arrPlanes[i] != null)
+                if (arrPlanes[count] != null)
                 {
-                    planesRegistrados += $"{i + 1}. {arrPlanes[i]}\n";
+                    lstPlan.Items.Add(arrPlanes[count]);
                 }
             }
-            MessageBox.Show(planesRegistrados, "Listado de Planes", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
 

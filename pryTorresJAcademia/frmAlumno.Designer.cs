@@ -28,16 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAlumno));
             this.gbAlumnos = new System.Windows.Forms.GroupBox();
-            this.lblRegistro = new System.Windows.Forms.Label();
-            this.mtbDocumento = new System.Windows.Forms.MaskedTextBox();
-            this.tbNombre = new System.Windows.Forms.TextBox();
-            this.tbApellido = new System.Windows.Forms.TextBox();
-            this.tbDireccion = new System.Windows.Forms.TextBox();
-            this.tbContacto = new System.Windows.Forms.TextBox();
-            this.dtpNacimiento = new System.Windows.Forms.DateTimePicker();
-            this.btnRegistrar = new System.Windows.Forms.Button();
             this.btnListado = new System.Windows.Forms.Button();
+            this.btnRegistrar = new System.Windows.Forms.Button();
+            this.dtpNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.tbContacto = new System.Windows.Forms.TextBox();
+            this.tbDireccion = new System.Windows.Forms.TextBox();
+            this.tbApellido = new System.Windows.Forms.TextBox();
+            this.tbNombre = new System.Windows.Forms.TextBox();
+            this.mtbDocumento = new System.Windows.Forms.MaskedTextBox();
+            this.lblRegistro = new System.Windows.Forms.Label();
             this.gbAlumnos.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,6 +60,71 @@
             this.gbAlumnos.TabStop = false;
             this.gbAlumnos.Text = "Registro";
             // 
+            // btnListado
+            // 
+            this.btnListado.Location = new System.Drawing.Point(10, 205);
+            this.btnListado.Name = "btnListado";
+            this.btnListado.Size = new System.Drawing.Size(261, 23);
+            this.btnListado.TabIndex = 7;
+            this.btnListado.Text = "Listado";
+            this.btnListado.UseVisualStyleBackColor = true;
+            this.btnListado.Click += new System.EventHandler(this.btnListado_Click);
+            // 
+            // btnRegistrar
+            // 
+            this.btnRegistrar.Location = new System.Drawing.Point(10, 176);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.Size = new System.Drawing.Size(261, 23);
+            this.btnRegistrar.TabIndex = 6;
+            this.btnRegistrar.Text = "Registrar";
+            this.btnRegistrar.UseVisualStyleBackColor = true;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
+            // 
+            // dtpNacimiento
+            // 
+            this.dtpNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNacimiento.Location = new System.Drawing.Point(139, 148);
+            this.dtpNacimiento.Name = "dtpNacimiento";
+            this.dtpNacimiento.Size = new System.Drawing.Size(132, 20);
+            this.dtpNacimiento.TabIndex = 5;
+            this.dtpNacimiento.ValueChanged += new System.EventHandler(this.dtpNacimiento_ValueChanged);
+            // 
+            // tbContacto
+            // 
+            this.tbContacto.Location = new System.Drawing.Point(139, 121);
+            this.tbContacto.Name = "tbContacto";
+            this.tbContacto.Size = new System.Drawing.Size(132, 20);
+            this.tbContacto.TabIndex = 4;
+            // 
+            // tbDireccion
+            // 
+            this.tbDireccion.Location = new System.Drawing.Point(139, 95);
+            this.tbDireccion.Name = "tbDireccion";
+            this.tbDireccion.Size = new System.Drawing.Size(132, 20);
+            this.tbDireccion.TabIndex = 3;
+            // 
+            // tbApellido
+            // 
+            this.tbApellido.Location = new System.Drawing.Point(139, 69);
+            this.tbApellido.Name = "tbApellido";
+            this.tbApellido.Size = new System.Drawing.Size(132, 20);
+            this.tbApellido.TabIndex = 2;
+            // 
+            // tbNombre
+            // 
+            this.tbNombre.Location = new System.Drawing.Point(139, 43);
+            this.tbNombre.Name = "tbNombre";
+            this.tbNombre.Size = new System.Drawing.Size(132, 20);
+            this.tbNombre.TabIndex = 1;
+            // 
+            // mtbDocumento
+            // 
+            this.mtbDocumento.Location = new System.Drawing.Point(139, 17);
+            this.mtbDocumento.Mask = "99999999";
+            this.mtbDocumento.Name = "mtbDocumento";
+            this.mtbDocumento.Size = new System.Drawing.Size(132, 20);
+            this.mtbDocumento.TabIndex = 0;
+            // 
             // lblRegistro
             // 
             this.lblRegistro.AutoSize = true;
@@ -68,71 +134,6 @@
             this.lblRegistro.TabIndex = 0;
             this.lblRegistro.Text = "DNI:\r\n\r\nNombre:\r\n\r\nApellido:\r\n\r\nDirección:\r\n\r\nContacto:\r\n\r\nFecha de nacimiento:";
             // 
-            // mtbDocumento
-            // 
-            this.mtbDocumento.Location = new System.Drawing.Point(139, 17);
-            this.mtbDocumento.Mask = "99999999";
-            this.mtbDocumento.Name = "mtbDocumento";
-            this.mtbDocumento.Size = new System.Drawing.Size(132, 20);
-            this.mtbDocumento.TabIndex = 1;
-            // 
-            // tbNombre
-            // 
-            this.tbNombre.Location = new System.Drawing.Point(139, 43);
-            this.tbNombre.Name = "tbNombre";
-            this.tbNombre.Size = new System.Drawing.Size(132, 20);
-            this.tbNombre.TabIndex = 2;
-            // 
-            // tbApellido
-            // 
-            this.tbApellido.Location = new System.Drawing.Point(139, 69);
-            this.tbApellido.Name = "tbApellido";
-            this.tbApellido.Size = new System.Drawing.Size(132, 20);
-            this.tbApellido.TabIndex = 3;
-            // 
-            // tbDireccion
-            // 
-            this.tbDireccion.Location = new System.Drawing.Point(139, 95);
-            this.tbDireccion.Name = "tbDireccion";
-            this.tbDireccion.Size = new System.Drawing.Size(132, 20);
-            this.tbDireccion.TabIndex = 4;
-            // 
-            // tbContacto
-            // 
-            this.tbContacto.Location = new System.Drawing.Point(139, 121);
-            this.tbContacto.Name = "tbContacto";
-            this.tbContacto.Size = new System.Drawing.Size(132, 20);
-            this.tbContacto.TabIndex = 5;
-            // 
-            // dtpNacimiento
-            // 
-            this.dtpNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNacimiento.Location = new System.Drawing.Point(139, 148);
-            this.dtpNacimiento.Name = "dtpNacimiento";
-            this.dtpNacimiento.Size = new System.Drawing.Size(132, 20);
-            this.dtpNacimiento.TabIndex = 6;
-            this.dtpNacimiento.ValueChanged += new System.EventHandler(this.dtpNacimiento_ValueChanged);
-            // 
-            // btnRegistrar
-            // 
-            this.btnRegistrar.Location = new System.Drawing.Point(10, 176);
-            this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(261, 23);
-            this.btnRegistrar.TabIndex = 7;
-            this.btnRegistrar.Text = "Registrar";
-            this.btnRegistrar.UseVisualStyleBackColor = true;
-            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
-            // 
-            // btnListado
-            // 
-            this.btnListado.Location = new System.Drawing.Point(10, 205);
-            this.btnListado.Name = "btnListado";
-            this.btnListado.Size = new System.Drawing.Size(261, 23);
-            this.btnListado.TabIndex = 8;
-            this.btnListado.Text = "Listado";
-            this.btnListado.UseVisualStyleBackColor = true;
-            this.btnListado.Click += new System.EventHandler(this.btnListado_Click);
-            // 
             // frmAlumno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -140,6 +141,8 @@
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(313, 268);
             this.Controls.Add(this.gbAlumnos);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frmAlumno";
             this.Text = "Alumnos";
             this.Load += new System.EventHandler(this.frmAlumno_Load);
