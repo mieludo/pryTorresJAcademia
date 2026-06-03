@@ -21,7 +21,7 @@ namespace pryTorresJAcademia
 
         
         string[,] arrMaterias = new string[2, 4];
-        string[] arrPlanes = new string[3];
+        string[] arrPlanes = new string[5];
         int indiceFila = 0;
 
         public frmRegistro()
@@ -89,8 +89,8 @@ namespace pryTorresJAcademia
 
         private void btnCarga_Click(object sender, EventArgs e)
         {
-            frmCargaPlan frmCargaPlan = new frmCargaPlan(arrPlanes);
-            frmCargaPlan.arrPlanes = arrPlanes;
+            frmCargaPlan frmCargaPlan = new frmCargaPlan();
+           frmCargaPlan.arrPlanes = arrPlanes;
             frmCargaPlan.ShowDialog();
 
             cbxPlan.DataSource = null;

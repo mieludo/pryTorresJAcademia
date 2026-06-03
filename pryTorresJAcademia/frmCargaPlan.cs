@@ -14,13 +14,13 @@ namespace pryTorresJAcademia
     public partial class frmCargaPlan : Form
     {
         int varIndice = 0;
-        public string[] arrPlanes = new string[3];
+        public string[] arrPlanes = new string[5];
 
 
-        public frmCargaPlan(string[] arrPlanesRecibido)
+        public frmCargaPlan()
         {
             InitializeComponent();
-            arrPlanes = arrPlanesRecibido;
+            
         }
 
         private void lblNombre_Click(object sender, EventArgs e)
@@ -30,27 +30,19 @@ namespace pryTorresJAcademia
 
         private void frmCargaPlan_Load(object sender, EventArgs e)
         {
-            if (tbNombre.Text != "")
-                arrPlanes[varIndice] = tbNombre.Text;
-            varIndice++;
-            {
-                MessageBox.Show("Nombre registrado con éxito", "Registro de datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             if (tbNombre.Text != "")
-
+            {                
                 arrPlanes[varIndice] = tbNombre.Text;
-            varIndice++;
-
-            tbNombre.Clear();
-
-
-            {
+                varIndice++;
+                tbNombre.Clear();
                 MessageBox.Show("Nombre registrado con éxito", "Registro de datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+    
             if (varIndice >= arrPlanes.Length)
             {
                 MessageBox.Show("No se pueden cargar más planes", "Registro de datos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
