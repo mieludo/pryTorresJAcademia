@@ -34,13 +34,14 @@
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.tbNombre = new System.Windows.Forms.TextBox();
             this.lstPlan = new System.Windows.Forms.ListBox();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(12, 19);
+            this.lblNombre.Location = new System.Drawing.Point(12, 33);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(143, 21);
             this.lblNombre.TabIndex = 0;
@@ -49,7 +50,7 @@
             // 
             // btnListar
             // 
-            this.btnListar.Location = new System.Drawing.Point(16, 206);
+            this.btnListar.Location = new System.Drawing.Point(16, 220);
             this.btnListar.Name = "btnListar";
             this.btnListar.Size = new System.Drawing.Size(113, 23);
             this.btnListar.TabIndex = 1;
@@ -60,7 +61,7 @@
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(148, 206);
+            this.btnRegistrar.Location = new System.Drawing.Point(148, 220);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(115, 23);
             this.btnRegistrar.TabIndex = 2;
@@ -70,7 +71,7 @@
             // 
             // tbNombre
             // 
-            this.tbNombre.Location = new System.Drawing.Point(157, 20);
+            this.tbNombre.Location = new System.Drawing.Point(157, 34);
             this.tbNombre.Name = "tbNombre";
             this.tbNombre.Size = new System.Drawing.Size(103, 20);
             this.tbNombre.TabIndex = 0;
@@ -79,17 +80,29 @@
             // lstPlan
             // 
             this.lstPlan.FormattingEnabled = true;
-            this.lstPlan.Location = new System.Drawing.Point(16, 48);
+            this.lstPlan.Location = new System.Drawing.Point(16, 62);
             this.lstPlan.Name = "lstPlan";
             this.lstPlan.Size = new System.Drawing.Size(244, 147);
             this.lstPlan.TabIndex = 3;
+            // 
+            // btnVolver
+            // 
+            this.btnVolver.ForeColor = System.Drawing.Color.Red;
+            this.btnVolver.Location = new System.Drawing.Point(16, 7);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(75, 23);
+            this.btnVolver.TabIndex = 4;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // frmCargaPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.ClientSize = new System.Drawing.Size(279, 253);
+            this.ClientSize = new System.Drawing.Size(285, 254);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.lstPlan);
             this.Controls.Add(this.tbNombre);
             this.Controls.Add(this.btnRegistrar);
@@ -112,5 +125,6 @@
         private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.TextBox tbNombre;
         private System.Windows.Forms.ListBox lstPlan;
+        private System.Windows.Forms.Button btnVolver;
     }
 }

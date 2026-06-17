@@ -105,6 +105,13 @@ namespace pryTorresJAcademia
                 btnRegistrar.PerformClick();
             }
         }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+                frmPrincipal frmPrincipal = new frmPrincipal();
+            frmPrincipal.ShowDialog();
+        }
     }
 }
 

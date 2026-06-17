@@ -67,6 +67,10 @@
             // lstPlan
             // 
             this.lstPlan.FormattingEnabled = true;
+            this.lstPlan.Items.AddRange(new object[] {
+            "Plan Mayor",
+            "Plan Medio",
+            "Plan Chico"});
             this.lstPlan.Location = new System.Drawing.Point(109, 106);
             this.lstPlan.Name = "lstPlan";
             this.lstPlan.Size = new System.Drawing.Size(144, 21);
