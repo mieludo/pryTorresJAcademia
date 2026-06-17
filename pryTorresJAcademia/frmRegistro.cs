@@ -19,7 +19,7 @@ namespace pryTorresJAcademia
         //string varPlan;
         //bool varEstado;
 
-        
+
         string[,] arrMaterias = new string[2, 4];
         string[] arrPlanes = new string[5];
         int indiceFila = 0;
@@ -28,54 +28,56 @@ namespace pryTorresJAcademia
         {
             InitializeComponent();
         }
+            private void ActualizarPlanes()
+        {
+            cbxPlan.DataSource = null;
+            cbxPlan.DataSource = arrPlanes.Where(plan => !string.IsNullOrWhiteSpace(plan)).ToArray();
+            cbxPlan.SelectedIndex = -1;
+        }
+    
+        
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-
-
-            if (tbNombre.Text == "" || cbxPlan.Text == "" || mtbCodigo.Text == "")
+            if (string.IsNullOrWhiteSpace(mtbCodigo.Text) ||
+        string.IsNullOrWhiteSpace(tbNombre.Text) ||
+        cbxPlan.SelectedIndex == -1 ||
+        cbxPlan.SelectedItem == null)
             {
-                MessageBox.Show("Debe completar todos los casilleros", "Registro académico", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Complete todos los campos y seleccione un plan.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (indiceFila >= arrMaterias.GetLength(0))
+            {
+                MessageBox.Show("Límite de materias alcanzado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            arrMaterias[indiceFila, 0] = mtbCodigo.Text;
+            arrMaterias[indiceFila, 1] = tbNombre.Text.Trim();
+            arrMaterias[indiceFila, 2] = cbxPlan.SelectedItem.ToString();
+
+            if (chbActivo.Checked)
+            {
+                arrMaterias[indiceFila, 3] = "Activo";
             }
             else
             {
-                if (
-              string.IsNullOrWhiteSpace(mtbCodigo.Text) ||
-              string.IsNullOrWhiteSpace(tbNombre.Text) ||
-              cbxPlan.SelectedIndex == -1
-           )
-                {
-                    MessageBox.Show("Complete todos los campos y seleccione un plan.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                if (indiceFila >= arrMaterias.GetLength(0))
-                {
-                    MessageBox.Show("Límite de materias alcanzado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
-                arrMaterias[indiceFila, 0] = mtbCodigo.Text;
-                arrMaterias[indiceFila, 1] = tbNombre.Text;
-                arrMaterias[indiceFila, 2] = cbxPlan.SelectedItem.ToString();
-
-                if (chbActivo.Checked)
-                {
-                    arrMaterias[indiceFila, 3] = "Activo";
-                }
-                else
-                {
-                    arrMaterias[indiceFila, 3] = "Inactivo";
-                }
-
-                mtbCodigo.Clear();
-                tbNombre.Clear();
-                cbxPlan.SelectedIndex = -1;
-                chbActivo.Checked = false;
-
-                indiceFila++;
-
-                MessageBox.Show("Materia registrada con éxito.", "Registro completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                arrMaterias[indiceFila, 3] = "Inactivo";
             }
+
+            mtbCodigo.Clear();
+            tbNombre.Clear();
+            cbxPlan.SelectedIndex = -1;
+            chbActivo.Checked = false;
+
+            indiceFila++;
+
+            MessageBox.Show("Materia registrada con éxito.", "Registro completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+
         }
         
 
@@ -90,11 +92,10 @@ namespace pryTorresJAcademia
         private void btnCarga_Click(object sender, EventArgs e)
         {
             frmCargaPlan frmCargaPlan = new frmCargaPlan();
-           frmCargaPlan.arrPlanes = arrPlanes;
+            frmCargaPlan.arrPlanes = arrPlanes;
             frmCargaPlan.ShowDialog();
 
-            cbxPlan.DataSource = null;
-            cbxPlan.DataSource = arrPlanes;
+            ActualizarPlanes();
 
 
         }
@@ -106,7 +107,7 @@ namespace pryTorresJAcademia
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
         }
 
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)

@@ -27,7 +27,8 @@ namespace pryTorresJAcademia
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(tbNombre.Text) ||
+            if (string.IsNullOrWhiteSpace(mtbDocumento.Text) ||
+               string.IsNullOrWhiteSpace(tbNombre.Text) ||
                string.IsNullOrWhiteSpace(tbApellido.Text) ||
                string.IsNullOrWhiteSpace(tbDireccion.Text) ||
                string.IsNullOrWhiteSpace(dtpNacimiento.Text) ||
@@ -72,18 +73,24 @@ namespace pryTorresJAcademia
 
         private void btnListado_Click(object sender, EventArgs e)
         {
+            if (indiceFila == 0)
+            {
+                MessageBox.Show("No hay alumnos registrados.", "Listado Vacío", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             for (int i = 0; i < arrAlumnos.GetLength(0); i++)
             {
                 string texto =
-    "DATOS DEL ALUMNO\n\n" +
-    "DNI: " + arrAlumnos[i, 0] + "\n" +
-    "Nombre: " + arrAlumnos[i, 1] + "\n" +
-    "Apellido: " + arrAlumnos[i, 2] + "\n" +
-    "Dirección: " + arrAlumnos[i, 3] + "\n" +
-    "Contacto: " + arrAlumnos[i, 4] + "\n" +
-    "Fecha nacimiento: " + arrAlumnos[i, 5] + "\n" +
-    "Fecha registro: " + arrAlumnos[i, 6] + "\n" +
-    "Última actualización: " + arrAlumnos[i, 7];
+                "DATOS DEL ALUMNO\n\n" +
+                "DNI: " + arrAlumnos[i, 0] + "\n" +
+                "Nombre: " + arrAlumnos[i, 1] + "\n" +
+                "Apellido: " + arrAlumnos[i, 2] + "\n" +
+                "Dirección: " + arrAlumnos[i, 3] + "\n" +
+                "Contacto: " + arrAlumnos[i, 4] + "\n" +
+                "Fecha nacimiento: " + arrAlumnos[i, 5] + "\n" +
+                "Fecha registro: " + arrAlumnos[i, 6] + "\n" +
+                "Última actualización: " + arrAlumnos[i, 7];
 
                 MessageBox.Show(texto, "Alumno registrado");
             }

@@ -12,12 +12,13 @@ namespace pryTorresJAcademia
 {
     public partial class frmListado : Form
     {
-        string[] arrPlanes = new string[3];
+
         public string[,] arrMateriasListado = new string[2, 4];
         public frmListado(string[] arrPlanesRecibido)
         {
             InitializeComponent();
-            lstPlan.DataSource = arrPlanesRecibido;
+            lstPlan.DataSource = arrPlanesRecibido.Where(plan => !string.IsNullOrWhiteSpace(plan)).ToArray();
+            lstPlan.SelectedIndex = -1;
         }
 
         private void frmListado_Load(object sender, EventArgs e)
@@ -32,48 +33,86 @@ namespace pryTorresJAcademia
             if (!rbTodo.Checked && !rbCodigo.Checked && !rbNombre.Checked && !rbPlan.Checked)
             {
                 MessageBox.Show("Seleccione su búsqueda", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
             if (rbTodo.Checked)
             {
                 for (int i = 0; i < arrMateriasListado.GetLength(0); i++)
                 {
-                    dgvMaterias.Rows.Add(arrMateriasListado[i, 0], arrMateriasListado[i, 1], arrMateriasListado[i, 2], arrMateriasListado[i, 3]);
+                    AgregarMateria(i);
                 }
             }
+
             if (rbCodigo.Checked)
             {
+                if (string.IsNullOrWhiteSpace(tbCodigo.Text))
+                {
+                    MessageBox.Show("Ingrese un código para buscar.", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
                 for (int i = 0; i < arrMateriasListado.GetLength(0); i++)
                 {
                     if (arrMateriasListado[i, 0] == tbCodigo.Text)
                     {
-                        dgvMaterias.Rows.Add(arrMateriasListado[i, 0], arrMateriasListado[i, 1], arrMateriasListado[i, 2], arrMateriasListado[i, 3]);
+                        AgregarMateria(i);
                     }
                 }
             }
+
             if (rbNombre.Checked)
             {
+                if (string.IsNullOrWhiteSpace(tbNombre.Text))
+                {
+                    MessageBox.Show("Ingrese un nombre para buscar.", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
                 for (int i = 0; i < arrMateriasListado.GetLength(0); i++)
                 {
-                    if (arrMateriasListado[i, 1] == tbNombre.Text)
+                    if (string.Equals(arrMateriasListado[i, 1], tbNombre.Text.Trim(), StringComparison.OrdinalIgnoreCase))
                     {
-                        dgvMaterias.Rows.Add(arrMateriasListado[i, 0], arrMateriasListado[i, 1], arrMateriasListado[i, 2], arrMateriasListado[i, 3]);
+                        AgregarMateria(i);
                     }
                 }
             }
+
             if (rbPlan.Checked)
             {
+                if (lstPlan.SelectedItem == null)
+                {
+                    MessageBox.Show("Seleccione un plan para buscar.", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
                 for (int i = 0; i < arrMateriasListado.GetLength(0); i++)
                 {
                     if (arrMateriasListado[i, 2] == lstPlan.SelectedItem.ToString())
                     {
-                        dgvMaterias.Rows.Add(arrMateriasListado[i, 0], arrMateriasListado[i, 1], arrMateriasListado[i, 2], arrMateriasListado[i, 3]);
+                        AgregarMateria(i);
                     }
                 }
+            }
+
+            if (dgvMaterias.Rows.Count == 0)
+            {
+                MessageBox.Show("No se encontraron materias.", "Listado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+        private void AgregarMateria(int indice)
+        {
+            if (!string.IsNullOrWhiteSpace(arrMateriasListado[indice, 0]))
+            {
+                dgvMaterias.Rows.Add(
+                    arrMateriasListado[indice, 0],
+                    arrMateriasListado[indice, 1],
+                    arrMateriasListado[indice, 2],
+                    arrMateriasListado[indice, 3]);
             }
         }
     }
 }
-        
-    
+
+
 

@@ -29,6 +29,7 @@ namespace pryTorresJAcademia
             this.Hide();
             
             frmRegistro.ShowDialog();
+            this.Show();
         }
 
         private void frmAcademia_Load(object sender, EventArgs e)
@@ -43,7 +44,7 @@ namespace pryTorresJAcademia
             frmAlumno frmAlumno = new frmAlumno();
             this.Hide();
             frmAlumno.ShowDialog();
-            this.Close();
+            this.Show();
         }
     }
 }
