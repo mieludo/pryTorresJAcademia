@@ -39,6 +39,7 @@
             this.tbNombre = new System.Windows.Forms.TextBox();
             this.mtbDocumento = new System.Windows.Forms.MaskedTextBox();
             this.lblRegistro = new System.Windows.Forms.Label();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.gbAlumnos.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,7 +54,7 @@
             this.gbAlumnos.Controls.Add(this.tbNombre);
             this.gbAlumnos.Controls.Add(this.mtbDocumento);
             this.gbAlumnos.Controls.Add(this.lblRegistro);
-            this.gbAlumnos.Location = new System.Drawing.Point(13, 13);
+            this.gbAlumnos.Location = new System.Drawing.Point(12, 32);
             this.gbAlumnos.Name = "gbAlumnos";
             this.gbAlumnos.Size = new System.Drawing.Size(281, 240);
             this.gbAlumnos.TabIndex = 0;
@@ -134,12 +135,24 @@
             this.lblRegistro.TabIndex = 0;
             this.lblRegistro.Text = "DNI:\r\n\r\nNombre:\r\n\r\nApellido:\r\n\r\nDirección:\r\n\r\nContacto:\r\n\r\nFecha de nacimiento:";
             // 
+            // btnVolver
+            // 
+            this.btnVolver.ForeColor = System.Drawing.Color.Red;
+            this.btnVolver.Location = new System.Drawing.Point(12, 5);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(75, 23);
+            this.btnVolver.TabIndex = 1;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
             // frmAlumno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ClientSize = new System.Drawing.Size(313, 268);
+            this.ClientSize = new System.Drawing.Size(320, 282);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.gbAlumnos);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -164,5 +177,6 @@
         private System.Windows.Forms.DateTimePicker dtpNacimiento;
         private System.Windows.Forms.Button btnListado;
         private System.Windows.Forms.Button btnRegistrar;
+        private System.Windows.Forms.Button btnVolver;
     }
 }

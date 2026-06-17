@@ -43,6 +43,7 @@
             this.Columna2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Columna3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Columna4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.gbxBuscar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaterias)).BeginInit();
             this.SuspendLayout();
@@ -57,7 +58,7 @@
             this.gbxBuscar.Controls.Add(this.rbCodigo);
             this.gbxBuscar.Controls.Add(this.rbTodo);
             this.gbxBuscar.Controls.Add(this.btnBuscar);
-            this.gbxBuscar.Location = new System.Drawing.Point(21, 15);
+            this.gbxBuscar.Location = new System.Drawing.Point(15, 42);
             this.gbxBuscar.Name = "gbxBuscar";
             this.gbxBuscar.Size = new System.Drawing.Size(269, 203);
             this.gbxBuscar.TabIndex = 0;
@@ -153,7 +154,7 @@
             this.Columna2,
             this.Columna3,
             this.Columna4});
-            this.dgvMaterias.Location = new System.Drawing.Point(308, 25);
+            this.dgvMaterias.Location = new System.Drawing.Point(302, 52);
             this.dgvMaterias.Name = "dgvMaterias";
             this.dgvMaterias.Size = new System.Drawing.Size(444, 193);
             this.dgvMaterias.TabIndex = 1;
@@ -178,12 +179,24 @@
             this.Columna4.HeaderText = "Activo";
             this.Columna4.Name = "Columna4";
             // 
+            // btnVolver
+            // 
+            this.btnVolver.ForeColor = System.Drawing.Color.Red;
+            this.btnVolver.Location = new System.Drawing.Point(15, 12);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(75, 23);
+            this.btnVolver.TabIndex = 2;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
             // frmListado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ClientSize = new System.Drawing.Size(774, 241);
+            this.ClientSize = new System.Drawing.Size(758, 257);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.dgvMaterias);
             this.Controls.Add(this.gbxBuscar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -215,5 +228,6 @@
         private System.Windows.Forms.MaskedTextBox tbCodigo;
         private System.Windows.Forms.ComboBox lstPlan;
         private System.Windows.Forms.TextBox tbNombre;
+        private System.Windows.Forms.Button btnVolver;
     }
 }

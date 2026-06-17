@@ -95,5 +95,12 @@ namespace pryTorresJAcademia
                 MessageBox.Show(texto, "Alumno registrado");
             }
         }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmPrincipal frmPrincipal = new frmPrincipal();
+            frmPrincipal.ShowDialog();
+        }
     }
 }

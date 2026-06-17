@@ -111,6 +111,13 @@ namespace pryTorresJAcademia
                     arrMateriasListado[indice, 3]);
             }
         }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmPrincipal frmPrincipal = new frmPrincipal();
+            frmPrincipal.ShowDialog();
+        }
     }
 }
 
