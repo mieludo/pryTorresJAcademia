@@ -30,9 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAcademia));
             this.lblBienvenido = new System.Windows.Forms.Label();
-            this.btnIniciar = new System.Windows.Forms.Button();
-            this.btnAlumnos = new System.Windows.Forms.Button();
             this.pbLogo = new System.Windows.Forms.PictureBox();
+            this.btnIniciar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,28 +48,6 @@
             this.lblBienvenido.Text = "¡ Bienvenido !";
             this.lblBienvenido.Click += new System.EventHandler(this.lblBienvenido_Click);
             // 
-            // btnIniciar
-            // 
-            this.btnIniciar.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIniciar.Location = new System.Drawing.Point(58, 486);
-            this.btnIniciar.Name = "btnIniciar";
-            this.btnIniciar.Size = new System.Drawing.Size(227, 43);
-            this.btnIniciar.TabIndex = 1;
-            this.btnIniciar.Text = "Registro ";
-            this.btnIniciar.UseVisualStyleBackColor = true;
-            this.btnIniciar.Click += new System.EventHandler(this.btnIniciar_Click);
-            // 
-            // btnAlumnos
-            // 
-            this.btnAlumnos.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAlumnos.Location = new System.Drawing.Point(291, 486);
-            this.btnAlumnos.Name = "btnAlumnos";
-            this.btnAlumnos.Size = new System.Drawing.Size(227, 43);
-            this.btnAlumnos.TabIndex = 2;
-            this.btnAlumnos.Text = "Alumnos";
-            this.btnAlumnos.UseVisualStyleBackColor = true;
-            this.btnAlumnos.Click += new System.EventHandler(this.btnAlumnos_Click);
-            // 
             // pbLogo
             // 
             this.pbLogo.BackColor = System.Drawing.Color.Transparent;
@@ -83,13 +60,23 @@
             this.pbLogo.TabIndex = 3;
             this.pbLogo.TabStop = false;
             // 
+            // btnIniciar
+            // 
+            this.btnIniciar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIniciar.Location = new System.Drawing.Point(227, 487);
+            this.btnIniciar.Name = "btnIniciar";
+            this.btnIniciar.Size = new System.Drawing.Size(120, 39);
+            this.btnIniciar.TabIndex = 4;
+            this.btnIniciar.Text = "Inicio";
+            this.btnIniciar.UseVisualStyleBackColor = true;
+            this.btnIniciar.Click += new System.EventHandler(this.btnIniciar_Click_1);
+            // 
             // frmAcademia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(572, 558);
-            this.Controls.Add(this.btnAlumnos);
             this.Controls.Add(this.btnIniciar);
             this.Controls.Add(this.lblBienvenido);
             this.Controls.Add(this.pbLogo);
@@ -109,9 +96,8 @@
         #endregion
 
         private System.Windows.Forms.Label lblBienvenido;
-        private System.Windows.Forms.Button btnIniciar;
-        private System.Windows.Forms.Button btnAlumnos;
         private System.Windows.Forms.PictureBox pbLogo;
+        private System.Windows.Forms.Button btnIniciar;
     }
 }
 

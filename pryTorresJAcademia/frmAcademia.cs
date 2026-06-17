@@ -26,10 +26,7 @@ namespace pryTorresJAcademia
         {
             frmRegistro frmRegistro = new frmRegistro();
 
-            this.Hide();
             
-            frmRegistro.ShowDialog();
-            this.Show();
         }
 
         private void frmAcademia_Load(object sender, EventArgs e)
@@ -41,10 +38,15 @@ namespace pryTorresJAcademia
 
         private void btnAlumnos_Click(object sender, EventArgs e)
         {
-            frmAlumno frmAlumno = new frmAlumno();
-            this.Hide();
-            frmAlumno.ShowDialog();
-            this.Show();
+            
+        }
+
+        private void btnIniciar_Click_1(object sender, EventArgs e)
+        {
+            frmPrincipal frmPrincipal = new frmPrincipal();
+            frmPrincipal.ShowDialog();
+            this.Close();
+
         }
     }
 }
