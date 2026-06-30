@@ -13,9 +13,20 @@ namespace pryTorresJAcademia
 {
     public partial class frmCargaPlan : Form
     {
-        int varIndice = 0;
-        public string[] arrPlanes = new string[5];
+        public static string[] arrPlanes = new string[5];
+        public static int indicePlan = 0;
 
+        public static string[] DevolverPlanes()
+        {
+            string[] resultado = new string[indicePlan];
+
+            for (int i = 0; i < indicePlan; i++)
+            {
+                resultado[i] = arrPlanes[i];
+            }
+
+            return resultado;
+        }
 
         public frmCargaPlan()
         {
@@ -30,61 +41,56 @@ namespace pryTorresJAcademia
 
         private void frmCargaPlan_Load(object sender, EventArgs e)
         {
-            varIndice = 0;
+            lstPlan.Items.Clear();
 
-            while (varIndice < arrPlanes.Length && !string.IsNullOrEmpty(arrPlanes[varIndice]))
+            for (int i = 0; i < indicePlan; i++)
             {
-                varIndice++;
+                lstPlan.Items.Add(arrPlanes[i]);
             }
-            btnRegistrar.Enabled = varIndice < arrPlanes.Length;
-            
+
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            if (varIndice >= arrPlanes.Length)
+            if (indicePlan >= arrPlanes.Length)
             {
                 MessageBox.Show("No se pueden cargar más planes", "Registro de datos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                btnRegistrar.Enabled = false;
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(tbNombre.Text))
+            if (tbNombre.Text == "")
             {
                 MessageBox.Show("Debe ingresar el nombre del plan", "Registro de datos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                tbNombre.Focus();
                 return;
             }
 
-            arrPlanes[varIndice] = tbNombre.Text.Trim();
-            varIndice++;
-            tbNombre.Clear();
-            ListarPlanes();
-            MessageBox.Show("Nombre registrado con éxito", "Registro de datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            arrPlanes[indicePlan] = tbNombre.Text;
+            indicePlan++;
 
-            if (varIndice >= arrPlanes.Length)
-            {
-                MessageBox.Show("No se pueden cargar más planes", "Registro de datos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                btnRegistrar.Enabled = false;
-            }
+            lstPlan.Items.Add(tbNombre.Text);
+
+            tbNombre.Clear();
+            tbNombre.Focus();
+
+            MessageBox.Show("Plan registrado con éxito", "Registro de datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
 
         private void btnListar_Click(object sender, EventArgs e)
         {
-            
-            {
-                ListarPlanes();
-            }
-            }
-            private void ListarPlanes()
-        {
+
             lstPlan.Items.Clear();
 
-            for (int count = 0; count < arrPlanes.Length; count++)
+            for (int i = 0; i < indicePlan; i++)
             {
-                if (!string.IsNullOrWhiteSpace(arrPlanes[count]))
-                {
-                    lstPlan.Items.Add(arrPlanes[count]);
+                lstPlan.Items.Add(arrPlanes[i]);
+            }
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Hide();
                 }
             }
         }
@@ -100,11 +106,11 @@ namespace pryTorresJAcademia
 
         private void btnListar_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                btnRegistrar.PerformClick();
-            }
+        if (e.KeyChar == (char)Keys.Enter)
+        {
+            btnRegistrar.PerformClick();
         }
+}
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
