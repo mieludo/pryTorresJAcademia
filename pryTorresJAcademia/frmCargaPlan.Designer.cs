@@ -57,7 +57,7 @@
             this.btnListar.Text = "Listar";
             this.btnListar.UseVisualStyleBackColor = true;
             this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
-            this.btnListar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btnListar_KeyPress);
+            
             // 
             // btnRegistrar
             // 
@@ -75,7 +75,7 @@
             this.tbNombre.Name = "tbNombre";
             this.tbNombre.Size = new System.Drawing.Size(103, 20);
             this.tbNombre.TabIndex = 0;
-            this.tbNombre.TextChanged += new System.EventHandler(this.tbNombre_TextChanged);
+            
             // 
             // lstPlan
             // 

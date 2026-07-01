@@ -31,12 +31,10 @@ namespace pryTorresJAcademia
         public frmCargaPlan()
         {
             InitializeComponent();
-            
         }
 
         private void lblNombre_Click(object sender, EventArgs e)
         {
-
         }
 
         private void frmCargaPlan_Load(object sender, EventArgs e)
@@ -47,7 +45,6 @@ namespace pryTorresJAcademia
             {
                 lstPlan.Items.Add(arrPlanes[i]);
             }
-
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
@@ -74,12 +71,10 @@ namespace pryTorresJAcademia
             tbNombre.Focus();
 
             MessageBox.Show("Plan registrado con éxito", "Registro de datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
         }
 
         private void btnListar_Click(object sender, EventArgs e)
         {
-
             lstPlan.Items.Clear();
 
             for (int i = 0; i < indicePlan; i++)
@@ -88,37 +83,24 @@ namespace pryTorresJAcademia
             }
         }
 
-        private void btnVolver_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-                }
-            }
-        }
-
-
-        
-
         private void tbNombre_TextChanged(object sender, EventArgs e)
         {
-
         }
-
 
         private void btnListar_KeyPress(object sender, KeyPressEventArgs e)
         {
-        if (e.KeyChar == (char)Keys.Enter)
-        {
-            btnRegistrar.PerformClick();
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btnRegistrar.PerformClick();
+            }
         }
-}
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Hide();
-                frmPrincipal frmPrincipal = new frmPrincipal();
+            frmPrincipal frmPrincipal = new frmPrincipal();
             frmPrincipal.ShowDialog();
         }
     }
 }
-
 

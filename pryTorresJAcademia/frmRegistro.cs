@@ -12,97 +12,104 @@ namespace pryTorresJAcademia
 {
     public partial class frmRegistro : Form
     {
-        public DateTime VarInicioSesion;
+        string estado;
+        public static int indiceFila = 0;
+        public static string[,] arrMaterias = new string[2, 4];
 
-        //int varCodigo;
-        //string varNombre;
-        //string varPlan;
-        //bool varEstado;
-
-
-        string[,] arrMaterias = new string[2, 4];
-        string[] arrPlanes = new string[5];
-        int indiceFila = 0;
+        public static string[,] DevolverMaterias()
+        {
+            return arrMaterias;
+        }
 
         public frmRegistro()
         {
             InitializeComponent();
         }
-            private void ActualizarPlanes()
+
+        private void ActualizarPlanes()
         {
             cbxPlan.DataSource = null;
-            cbxPlan.DataSource = arrPlanes.Where(plan => !string.IsNullOrWhiteSpace(plan)).ToArray();
+            cbxPlan.DataSource = frmCargaPlan.DevolverPlanes();
             cbxPlan.SelectedIndex = -1;
         }
-    
-        
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(mtbCodigo.Text) ||
-        string.IsNullOrWhiteSpace(tbNombre.Text) ||
-        cbxPlan.SelectedIndex == -1 ||
-        cbxPlan.SelectedItem == null)
+            if (mtbCodigo.Text == "")
             {
-                MessageBox.Show("Complete todos los campos y seleccione un plan.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Debe ingresar el código", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                mtbCodigo.Focus();
                 return;
+            }
+
+            if (tbNombre.Text == "")
+            {
+                MessageBox.Show("Debe ingresar el nombre", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                tbNombre.Focus();
+                return;
+            }
+
+            if (cbxPlan.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe seleccionar un plan", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                cbxPlan.Focus();
+                return;
+            }
+
+            if (chbActivo.Checked == true)
+            {
+                estado = "Activo";
+            }
+            else
+            {
+                estado = "Inactivo";
             }
 
             if (indiceFila >= arrMaterias.GetLength(0))
             {
                 MessageBox.Show("Límite de materias alcanzado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                mtbCodigo.Clear();
+                tbNombre.Clear();
+                cbxPlan.SelectedIndex = -1;
+                chbActivo.Checked = false;
+                mtbCodigo.Focus();
                 return;
             }
 
             arrMaterias[indiceFila, 0] = mtbCodigo.Text;
-            arrMaterias[indiceFila, 1] = tbNombre.Text.Trim();
-            arrMaterias[indiceFila, 2] = cbxPlan.SelectedItem.ToString();
+            arrMaterias[indiceFila, 1] = tbNombre.Text;
+            arrMaterias[indiceFila, 2] = cbxPlan.Text;
+            arrMaterias[indiceFila, 3] = estado;
 
-            if (chbActivo.Checked)
-            {
-                arrMaterias[indiceFila, 3] = "Activo";
-            }
-            else
-            {
-                arrMaterias[indiceFila, 3] = "Inactivo";
-            }
+            indiceFila++;
+
+            MessageBox.Show("Materia registrada con éxito", "Registro completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             mtbCodigo.Clear();
             tbNombre.Clear();
             cbxPlan.SelectedIndex = -1;
             chbActivo.Checked = false;
-
-            indiceFila++;
-
-            MessageBox.Show("Materia registrada con éxito.", "Registro completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
-
+            mtbCodigo.Focus();
         }
-        
 
         private void btnListado_Click(object sender, EventArgs e)
         {
-            frmListado frmListado = new frmListado(arrPlanes);
-            frmListado.arrMateriasListado = arrMaterias;
-
-            frmListado.ShowDialog();
+            frmListado listado = new frmListado(frmCargaPlan.DevolverPlanes());
+            listado.ShowDialog();
         }
 
         private void btnCarga_Click(object sender, EventArgs e)
         {
-            frmCargaPlan frmCargaPlan = new frmCargaPlan();
-            frmCargaPlan.arrPlanes = arrPlanes;
-            frmCargaPlan.ShowDialog();
+            frmCargaPlan cargaPlan = new frmCargaPlan();
+            cargaPlan.ShowDialog();
 
-            ActualizarPlanes();
-
-
+            cbxPlan.DataSource = null;
+            cbxPlan.DataSource = frmCargaPlan.DevolverPlanes();
+            cbxPlan.SelectedIndex = -1;
         }
 
         private void frmRegistro_Load(object sender, EventArgs e)
         {
-
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -112,7 +119,6 @@ namespace pryTorresJAcademia
 
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
         {
-
         }
     }
 }
