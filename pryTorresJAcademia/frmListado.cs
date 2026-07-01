@@ -17,7 +17,9 @@ namespace pryTorresJAcademia
         public frmListado(string[] arrPlanesRecibido)
         {
             InitializeComponent();
-            lstPlan.DataSource = arrPlanesRecibido.Where(plan => !string.IsNullOrWhiteSpace(plan)).ToArray();
+
+            lstPlan.DataSource = null;
+            lstPlan.DataSource = frmCargaPlan.DevolverPlanes();
             lstPlan.SelectedIndex = -1;
         }
 
@@ -32,73 +34,107 @@ namespace pryTorresJAcademia
 
             if (!rbTodo.Checked && !rbCodigo.Checked && !rbNombre.Checked && !rbPlan.Checked)
             {
-                MessageBox.Show("Seleccione su búsqueda", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Seleccione su búsqueda", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             if (rbTodo.Checked)
             {
-                for (int i = 0; i < arrMateriasListado.GetLength(0); i++)
+                for (int i = 0; i < frmRegistro.DevolverMaterias().GetLength(0); i++)
                 {
-                    AgregarMateria(i);
+                    if (frmRegistro.DevolverMaterias()[i, 0] != null)
+                    {
+                        dgvMaterias.Rows.Add(
+                            frmRegistro.DevolverMaterias()[i, 0],
+                            frmRegistro.DevolverMaterias()[i, 1],
+                            frmRegistro.DevolverMaterias()[i, 2],
+                            frmRegistro.DevolverMaterias()[i, 3]
+                        );
+                    }
                 }
             }
 
             if (rbCodigo.Checked)
             {
-                if (string.IsNullOrWhiteSpace(tbCodigo.Text))
+                bool encontrado = false;
+
+                for (int i = 0; i < frmRegistro.DevolverMaterias().GetLength(0); i++)
                 {
-                    MessageBox.Show("Ingrese un código para buscar.", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    if (frmRegistro.DevolverMaterias()[i, 0] != null && frmRegistro.DevolverMaterias()[i, 0] == tbCodigo.Text)
+                    {
+                        dgvMaterias.Rows.Add(
+                            frmRegistro.DevolverMaterias()[i, 0],
+                            frmRegistro.DevolverMaterias()[i, 1],
+                            frmRegistro.DevolverMaterias()[i, 2],
+                            frmRegistro.DevolverMaterias()[i, 3]
+                        );
+
+                        encontrado = true;
+                    }
                 }
 
-                for (int i = 0; i < arrMateriasListado.GetLength(0); i++)
+                if (encontrado == false)
                 {
-                    if (arrMateriasListado[i, 0] == tbCodigo.Text)
-                    {
-                        AgregarMateria(i);
-                    }
+                    MessageBox.Show("No se encontró el código ingresado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    tbCodigo.Focus();
                 }
             }
 
             if (rbNombre.Checked)
             {
-                if (string.IsNullOrWhiteSpace(tbNombre.Text))
+                bool encontrado = false;
+
+                for (int i = 0; i < frmRegistro.DevolverMaterias().GetLength(0); i++)
                 {
-                    MessageBox.Show("Ingrese un nombre para buscar.", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    if (frmRegistro.DevolverMaterias()[i, 1] != null && frmRegistro.DevolverMaterias()[i, 1].ToLower() == tbNombre.Text.ToLower())
+                    {
+                        dgvMaterias.Rows.Add(
+                            frmRegistro.DevolverMaterias()[i, 0],
+                            frmRegistro.DevolverMaterias()[i, 1],
+                            frmRegistro.DevolverMaterias()[i, 2],
+                            frmRegistro.DevolverMaterias()[i, 3]
+                        );
+
+                        encontrado = true;
+                    }
                 }
 
-                for (int i = 0; i < arrMateriasListado.GetLength(0); i++)
+                if (encontrado == false)
                 {
-                    if (string.Equals(arrMateriasListado[i, 1], tbNombre.Text.Trim(), StringComparison.OrdinalIgnoreCase))
-                    {
-                        AgregarMateria(i);
-                    }
+                    MessageBox.Show("No se encontró el nombre ingresado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    tbNombre.Focus();
                 }
             }
 
             if (rbPlan.Checked)
             {
-                if (lstPlan.SelectedItem == null)
-                {
-                    MessageBox.Show("Seleccione un plan para buscar.", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
+                bool encontrado = false;
 
-                for (int i = 0; i < arrMateriasListado.GetLength(0); i++)
+                for (int i = 0; i < frmRegistro.DevolverMaterias().GetLength(0); i++)
                 {
-                    if (arrMateriasListado[i, 2] == lstPlan.SelectedItem.ToString())
+                    if (frmRegistro.DevolverMaterias()[i, 2] != null && frmRegistro.DevolverMaterias()[i, 2] == lstPlan.Text)
                     {
-                        AgregarMateria(i);
+                        dgvMaterias.Rows.Add(
+                            frmRegistro.DevolverMaterias()[i, 0],
+                            frmRegistro.DevolverMaterias()[i, 1],
+                            frmRegistro.DevolverMaterias()[i, 2],
+                            frmRegistro.DevolverMaterias()[i, 3]
+                        );
+
+                        encontrado = true;
                     }
                 }
+
+                if (encontrado == false)
+                {
+                    MessageBox.Show("No se encontró el plan seleccionado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    lstPlan.Focus();
+                }
             }
 
-            if (dgvMaterias.Rows.Count == 0)
-            {
-                MessageBox.Show("No se encontraron materias.", "Listado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            tbCodigo.Clear();
+            tbNombre.Clear();
+            lstPlan.SelectedIndex = -1;
         }
         private void AgregarMateria(int indice)
         {
@@ -115,8 +151,7 @@ namespace pryTorresJAcademia
         private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmPrincipal frmPrincipal = new frmPrincipal();
-            frmPrincipal.ShowDialog();
+            
         }
     }
 }

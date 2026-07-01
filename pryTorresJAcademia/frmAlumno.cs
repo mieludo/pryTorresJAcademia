@@ -27,12 +27,11 @@ namespace pryTorresJAcademia
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(mtbDocumento.Text) ||
-               string.IsNullOrWhiteSpace(tbNombre.Text) ||
-               string.IsNullOrWhiteSpace(tbApellido.Text) ||
-               string.IsNullOrWhiteSpace(tbDireccion.Text) ||
-               string.IsNullOrWhiteSpace(dtpNacimiento.Text) ||
-               string.IsNullOrWhiteSpace(tbContacto.Text))
+            if (mtbDocumento.Text == "" ||
+                tbNombre.Text == "" ||
+                tbApellido.Text == "" ||
+                tbDireccion.Text == "" ||
+                tbContacto.Text == "")
             {
                 MessageBox.Show("Por favor, complete todos los campos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -62,13 +61,12 @@ namespace pryTorresJAcademia
             tbDireccion.Clear();
             mtbDocumento.Clear();
             tbContacto.Clear();
-            dtpNacimiento.Format = DateTimePickerFormat.Custom;
-            dtpNacimiento.CustomFormat = " ";
+            mtbDocumento.Focus();
         }
 
         private void dtpNacimiento_ValueChanged(object sender, EventArgs e)
         {
-            dtpNacimiento.CustomFormat = "dd/MM/yyyy";
+            
         }
 
         private void btnListado_Click(object sender, EventArgs e)
@@ -79,7 +77,7 @@ namespace pryTorresJAcademia
                 return;
             }
 
-            for (int i = 0; i < arrAlumnos.GetLength(0); i++)
+            for (int i = 0; i < indiceFila; i++)
             {
                 string texto =
                 "DATOS DEL ALUMNO\n\n" +
@@ -99,8 +97,7 @@ namespace pryTorresJAcademia
         private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmPrincipal frmPrincipal = new frmPrincipal();
-            frmPrincipal.ShowDialog();
+            
         }
     }
 }

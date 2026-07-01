@@ -19,7 +19,7 @@ namespace pryTorresJAcademia
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
-
+            lblFecha.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
         }
 
         private void lblFecha_Click(object sender, EventArgs e)
@@ -41,7 +41,7 @@ namespace pryTorresJAcademia
 
         private void planesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmListado listado = new frmListado(new string[5]);
+            frmListado listado = new frmListado(frmCargaPlan.DevolverPlanes());
             listado.ShowDialog();
         }
 
