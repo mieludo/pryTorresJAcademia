@@ -43,9 +43,12 @@ namespace pryTorresJAcademia
 
         private void btnIniciar_Click_1(object sender, EventArgs e)
         {
+            this.Hide();
+
             frmPrincipal frmPrincipal = new frmPrincipal();
+            frmPrincipal.WindowState = FormWindowState.Maximized;
             frmPrincipal.ShowDialog();
-            this.Close();
+
 
         }
     }

@@ -37,9 +37,9 @@
             this.listadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.planesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cargaDePlanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ssStatus = new System.Windows.Forms.StatusStrip();
             this.lblFecha = new System.Windows.Forms.ToolStripStatusLabel();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msRegistro.SuspendLayout();
             this.ssStatus.SuspendLayout();
             this.SuspendLayout();
@@ -110,6 +110,15 @@
             this.cargaDePlanToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
             this.cargaDePlanToolStripMenuItem.Text = "Carga de Plan";
             // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
+            this.salirToolStripMenuItem.ForeColor = System.Drawing.Color.Red;
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
+            this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            // 
             // ssStatus
             // 
             this.ssStatus.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -127,19 +136,12 @@
             this.lblFecha.Text = "Fecha";
             this.lblFecha.Click += new System.EventHandler(this.lblFecha_Click);
             // 
-            // salirToolStripMenuItem
-            // 
-            this.salirToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
-            this.salirToolStripMenuItem.ForeColor = System.Drawing.Color.Red;
-            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
-            this.salirToolStripMenuItem.Text = "Salir";
-            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
-            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(552, 446);
             this.Controls.Add(this.msRegistro);
             this.Controls.Add(this.ssStatus);

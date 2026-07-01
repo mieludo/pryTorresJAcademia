@@ -110,6 +110,9 @@ namespace pryTorresJAcademia
 
         private void frmRegistro_Load(object sender, EventArgs e)
         {
+            cbxPlan.DataSource = null;
+            cbxPlan.DataSource = frmCargaPlan.DevolverPlanes();
+            cbxPlan.SelectedIndex = -1;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
