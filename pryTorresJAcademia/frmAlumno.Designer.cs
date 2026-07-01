@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAlumno));
             this.gbAlumnos = new System.Windows.Forms.GroupBox();
-            this.btnListado = new System.Windows.Forms.Button();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.dtpNacimiento = new System.Windows.Forms.DateTimePicker();
             this.tbContacto = new System.Windows.Forms.TextBox();
@@ -40,12 +39,23 @@
             this.mtbDocumento = new System.Windows.Forms.MaskedTextBox();
             this.lblRegistro = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
+            this.dgvAlumnos = new System.Windows.Forms.DataGridView();
+            this.colDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDireccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colContacto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFechaNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
             this.gbAlumnos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnos)).BeginInit();
             this.SuspendLayout();
             // 
             // gbAlumnos
             // 
-            this.gbAlumnos.Controls.Add(this.btnListado);
+            this.gbAlumnos.Controls.Add(this.btnEditar);
+            this.gbAlumnos.Controls.Add(this.btnEliminar);
             this.gbAlumnos.Controls.Add(this.btnRegistrar);
             this.gbAlumnos.Controls.Add(this.dtpNacimiento);
             this.gbAlumnos.Controls.Add(this.tbContacto);
@@ -61,21 +71,11 @@
             this.gbAlumnos.TabStop = false;
             this.gbAlumnos.Text = "Registro";
             // 
-            // btnListado
-            // 
-            this.btnListado.Location = new System.Drawing.Point(10, 205);
-            this.btnListado.Name = "btnListado";
-            this.btnListado.Size = new System.Drawing.Size(261, 23);
-            this.btnListado.TabIndex = 7;
-            this.btnListado.Text = "Listado";
-            this.btnListado.UseVisualStyleBackColor = true;
-            this.btnListado.Click += new System.EventHandler(this.btnListado_Click);
-            // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(10, 176);
+            this.btnRegistrar.Location = new System.Drawing.Point(14, 193);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(261, 23);
+            this.btnRegistrar.Size = new System.Drawing.Size(81, 23);
             this.btnRegistrar.TabIndex = 6;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = true;
@@ -146,12 +146,79 @@
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
+            // dgvAlumnos
+            // 
+            this.dgvAlumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAlumnos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colDocumento,
+            this.colNombre,
+            this.colApellido,
+            this.colDireccion,
+            this.colContacto,
+            this.colFechaNacimiento});
+            this.dgvAlumnos.Location = new System.Drawing.Point(315, 32);
+            this.dgvAlumnos.Name = "dgvAlumnos";
+            this.dgvAlumnos.Size = new System.Drawing.Size(644, 238);
+            this.dgvAlumnos.TabIndex = 2;
+            this.dgvAlumnos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAlumnos_CellClick);
+            // 
+            // colDocumento
+            // 
+            this.colDocumento.HeaderText = "Documento";
+            this.colDocumento.Name = "colDocumento";
+            // 
+            // colNombre
+            // 
+            this.colNombre.HeaderText = "Nombre";
+            this.colNombre.Name = "colNombre";
+            // 
+            // colApellido
+            // 
+            this.colApellido.HeaderText = "Apellido";
+            this.colApellido.Name = "colApellido";
+            // 
+            // colDireccion
+            // 
+            this.colDireccion.HeaderText = "Dirección";
+            this.colDireccion.Name = "colDireccion";
+            // 
+            // colContacto
+            // 
+            this.colContacto.HeaderText = "Contacto";
+            this.colContacto.Name = "colContacto";
+            // 
+            // colFechaNacimiento
+            // 
+            this.colFechaNacimiento.HeaderText = "Fecha de nacimiento";
+            this.colFechaNacimiento.Name = "colFechaNacimiento";
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(188, 193);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.TabIndex = 7;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Location = new System.Drawing.Point(101, 193);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(81, 23);
+            this.btnEditar.TabIndex = 8;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
             // frmAlumno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ClientSize = new System.Drawing.Size(320, 282);
+            this.ClientSize = new System.Drawing.Size(966, 282);
+            this.Controls.Add(this.dgvAlumnos);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.gbAlumnos);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -161,6 +228,7 @@
             this.Load += new System.EventHandler(this.frmAlumno_Load);
             this.gbAlumnos.ResumeLayout(false);
             this.gbAlumnos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -175,8 +243,16 @@
         private System.Windows.Forms.TextBox tbNombre;
         private System.Windows.Forms.MaskedTextBox mtbDocumento;
         private System.Windows.Forms.DateTimePicker dtpNacimiento;
-        private System.Windows.Forms.Button btnListado;
         private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.DataGridView dgvAlumnos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDocumento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colApellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDireccion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colContacto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFechaNacimiento;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }
